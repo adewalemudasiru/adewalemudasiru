@@ -1,8 +1,6 @@
 <h1 align="center">Hi 👋, I'm Adewale Mudasiru</h1>
 <h3 align="center">A passionate frontend developer from Nigeria</h3>
 
- <img align="right" width="300" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjE1Y2E5MW9qdmY5NTBhOThtNnRvMWV0Mml0NXlnZzJranp1enZobSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7bdpLxQhsSQdyog/giphy.gif" alt="coding">
-
 - 🌱 I’m currently learning **React**
 
 - 📝 I regularly write articles on [techsbyte.com](techsbyte.com)
