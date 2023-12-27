@@ -1,13 +1,13 @@
 <h1 align="center">Hi 👋, I'm Adewale Mudasiru</h1>
 <h3 align="center">A passionate frontend developer from Nigeria</h3>
 
+ <img align="right" width="300" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjE1Y2E5MW9qdmY5NTBhOThtNnRvMWV0Mml0NXlnZzJranp1enZobSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7bdpLxQhsSQdyog/giphy.gif" alt="coding">
+
 - 🌱 I’m currently learning **React**
 
 - 📝 I regularly write articles on [techsbyte.com](techsbyte.com)
 
 - 📫 How to reach me **mudasiruluqmaan@gmail.com**
-
- <img align="right" width="300" src="https://giphy.com/gifs/night-programming-programmer-xUA7bdpLxQhsSQdyog" alt="coding">
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -20,8 +20,6 @@
 
 <h3 align="left">Support:</h3>
 <p><a href="https://www.buymeacoffee.com/techsbyte"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="techsbyte" /></a></p><br><br>
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=adewalemudasiru&show_icons=true&locale=en&layout=compact" alt="adewalemudasiru" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=adewalemudasiru&show_icons=true&locale=en" alt="adewalemudasiru" /></p>
 
