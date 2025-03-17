@@ -1,4 +1,5 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
 const Button = ({
   startIcon,
@@ -12,8 +13,12 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`flex items-center py-4 px-8 rounded-full transition-all ease-in-out duration-300 ${className}`}
       onClick={onClick}
+      className={twMerge(
+        "bg-teal-500 text-white flex items-center justify-center py-2 px-4 rounded-full",
+        className
+      )}
+      {...props}
     >
       {startIcon && (
         <span className={`mr-2 ${startIconClassName}`}>{startIcon}</span>

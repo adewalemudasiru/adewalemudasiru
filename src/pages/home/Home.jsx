@@ -25,12 +25,7 @@ const Home = () => {
           </p>
         </div>
         <div>
-          <Button
-            className="bg-teal-500 text-white"
-            endIcon={<ArrowRight size={16} />}
-          >
-            Let's talk
-          </Button>
+          <Button endIcon={<ArrowRight size={16} />}>Let's talk</Button>
         </div>
       </div>
     </div>
