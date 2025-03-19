@@ -15,7 +15,7 @@ const Button = ({
     <button
       onClick={onClick}
       className={twMerge(
-        "bg-teal-500 text-white flex items-center justify-center py-2 px-4 rounded-full",
+        "bg-teal-500 text-white flex items-center justify-center py-3 px-6 rounded-full text-lg ",
         className
       )}
       {...props}

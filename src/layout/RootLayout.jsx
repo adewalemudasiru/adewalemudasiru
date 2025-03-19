@@ -10,7 +10,7 @@ const RootLayout = () => {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <Outlet />
       </main>
-      <Footer className="bg-blue-500" />
+      <Footer className="bg-teal-500" />
     </div>
   );
 };

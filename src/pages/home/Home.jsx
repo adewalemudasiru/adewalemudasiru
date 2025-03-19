@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../components/elements/form/Button";
 import { ArrowRight } from "lucide-react";
+import Socials from "../../components/ui/Socials";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
         </div>
         <div className="max-w-2xl space-y-5">
           <h2 className="text-5xl font-bold">Adewale Mudasiru</h2>
-          <p>
+          <p className="text-lg">
             Frontend developer{" "}
             <span className="text-teal-500">
               crafting intuitive, responsive web experiences
@@ -24,8 +25,13 @@ const Home = () => {
             .
           </p>
         </div>
-        <div>
-          <Button endIcon={<ArrowRight size={16} />}>Let's talk</Button>
+        <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-3">
+          <div>
+            <Button endIcon={<ArrowRight size={16} />}>Let's talk</Button>
+          </div>
+          <div>
+            <Socials variant="home" />
+          </div>
         </div>
       </div>
     </div>
