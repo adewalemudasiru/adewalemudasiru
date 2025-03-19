@@ -8,6 +8,7 @@ import {
 import RootLayout from "./layout/RootLayout";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
+import { Analytics } from "@vercel/analytics/react";
 
 const PrivateRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,7 @@ const App = () => {
   return (
     <>
       <RouterProvider router={PrivateRouter} />
+      <Analytics />
     </>
   );
 };
