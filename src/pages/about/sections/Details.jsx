@@ -5,29 +5,31 @@ const Details = () => {
   return (
     <div>
       <div>
-        <h3>Experience</h3>
-        <div>
+        <h3 className="text-2xl font-bold mb-3">Experience</h3>
+        <div className="grid gap-6">
           {myData.experience.map((exp) => (
-            <div key={exp.company}>
-              <div>
+            <div key={exp.company} className="bg-amber-50 p-6">
+              <div className="flex items-center gap-4 mb-1">
                 <div>
-                  <exp.icon />
+                  <exp.icon size={20} />
                 </div>
                 <span>{exp.period}</span>
               </div>
 
-              <h4>{exp.jobTitle}</h4>
+              <h4 className="text-xl font-bold mt-2">{exp.jobTitle}</h4>
               <p>{exp.company}</p>
-              <p>{exp.description}</p>
-              <ul>
-                <li>{exp.technologies}</li>
+              <p className="mb-4">{exp.description}</p>
+              <ul className="flex gap-4 ">
+                {exp.technologies.map((tech) => (
+                  <li className="text-sm bg-teal-50 p-2 rounded-lg">{tech}</li>
+                ))}
               </ul>
             </div>
           ))}
         </div>
       </div>
-      <div>
-        <h3 className="text-2xl font-bold mt-12">Skills</h3>
+      <div className=" mt-12">
+        <h3 className="text-2xl font-bold mb-3">Skills</h3>
         <div className="flex flex-wrap justify-center gap-4">
           {myData.stack.map((skill) => (
             <div
@@ -38,26 +40,26 @@ const Details = () => {
               <span className="text-center">{skill.name}</span>
             </div>
           ))}
-          <h3>Education</h3>
-          <div>
-            {myData.education.map((edu) => (
-              <div key={edu.certificate}>
-                <div>
-                  <div>
-                    <edu.icon />
-                  </div>
-                  <span>{edu.certificate}</span>
-                </div>
-                <h4>{edu.course}</h4>
-                <div>
-                  <p>{edu.school}</p>
-                  <span>{edu.period}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
-        <h3>Badges</h3>
+        <h3 className="text-2xl font-bold mb-3">Education</h3>
+        <div className="grid gap-4">
+          {myData.education.map((edu) => (
+            <div key={edu.certificate} className="bg-amber-50 p-6 rounded-2xl">
+              <div className="flex items-center gap-4">
+                <div>
+                  <edu.icon />
+                </div>
+                <span>{edu.certificate}</span>
+              </div>
+              <h4 className="text-xl font-bold">{edu.course}</h4>
+              <div className="flex justify-between items-center">
+                <p>{edu.school}</p>
+                <span>{edu.period}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <h3 className="text-2xl font-bold mb-3">Badges</h3>
         <div>
           {myData.badges.map((badge) => (
             <div>

@@ -1,5 +1,7 @@
 import React from "react";
 import { myData } from "../../components/data/allData";
+import git from "../../assets/icons/git.svg";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 const Projects = () => {
   const [firsProject, ...restOfProjects] = myData.projects;
@@ -15,31 +17,84 @@ const Projects = () => {
       </div>
       <div className="mb-12">
         <h3 className="text-2xl font-bold mb-3">Latest Project</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-12 rounded-2xl bg-red-500 overflow-hidden">
-          <div>
-            <img src={firsProject.image} alt={firsProject.title} />
+        <div className="group grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border-0 border-gray-100 hover:border hover:border-teal-500 shadow-md hover:shadow-lg transition ease-in-out duration-300">
+          <div className="relative overflow-hidden ">
+            <img
+              src={firsProject.image}
+              alt={firsProject.title}
+              className="w-full h-64 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100  transition-opacity duration-300 flex items-end justify-start p-6 z-20">
+              <div className="flex gap-3 transition ease-in-out duration-300">
+                {firsProject.info.map((item) => (
+                  <a href={item.link} className="bg-teal-500 p-2 rounded-lg">
+                    <img
+                      src={item.icon}
+                      className="w-5 h-5"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col justify-center p-6">
-            <h4 className="text-2xl font-bold">{firsProject.title}</h4>
-            <p className="mb-4">{firsProject.description}</p>
-            <span className="flex flex-col gap-2 mt-auto">
-              {firsProject.stack.map((item) => item)}
-            </span>
+          <div className="flex flex-col justify-center p-6 mt-6 md:mt-0">
+            <h4 className="text-2xl font-bold mb-3">{firsProject.title}</h4>
+            <p className="text-lg mb-4">{firsProject.description}</p>
+            <ul className="flex gap-3 mt-auto">
+              {firsProject.stack.map((item) => (
+                <li className="text-xs tracking-wide font-semibold bg-amber-50 px-2 py-1 rounded-full">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
       <div>
         <h3 className="text-2xl font-bold mb-3">All Projects</h3>
-        <div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {restOfProjects.map((project) => (
-            <div>
-              <img src={project.image} alt={project.title} />
-              <div>
-                <h4>{project.title}</h4>
-                <p>{project.description}</p>
-                <span className="flex flex-col gap-2">
-                  {project.stack.map((item) => item)}
-                </span>
+            <div className="group rounded-2xl overflow-hidden border-0 border-gray-100 hover:border hover:border-teal-500 shadow-md hover:shadow-lg transition ease-in-out duration-300">
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  className=" w-full h-52 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100  transition-opacity duration-300 flex items-end justify-start p-6 z-20">
+                  <div className="flex gap-3">
+                    {project.info.map((item) => (
+                      <a
+                        href={item.link}
+                        className="bg-teal-500 p-2 rounded-lg"
+                      >
+                        <img
+                          src={item.icon}
+                          className="w-5 h-5"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-bold mb-3">{project.title}</h4>
+                <p className="text-md mb-4">{project.description}</p>
+                <ul className="flex gap-3">
+                  {project.stack.map((item) => (
+                    <li className="text-xs tracking-wide font-semibold bg-amber-50 px-2 py-1 rounded-full">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}

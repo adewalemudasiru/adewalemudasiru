@@ -1,7 +1,6 @@
 import {
   House,
   User,
-  Camera,
   Trophy,
   Code,
   Users,
@@ -23,6 +22,7 @@ import ts from "../../assets/icons/typescript.svg";
 import tailwind from "../../assets/icons/tailwind.svg";
 import youtube from "../../assets/icons/youtube.svg";
 import linkedin from "../../assets/icons/linkedin.svg";
+import externallink from "../../assets/icons/external-link.svg";
 
 export const myData = {
   navItems: [
@@ -171,10 +171,21 @@ export const myData = {
     {
       image:
         "https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png",
+
       title: "Chat App",
       description:
         "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
       stack: ["React", "TypeScript", "Tailwind CSS"],
+      info: [
+        {
+          icon: externallink,
+          link: "https://github.com",
+        },
+        {
+          icon: github,
+          link: "https://github.com",
+        },
+      ],
     },
     {
       image:
@@ -183,6 +194,16 @@ export const myData = {
       description:
         "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
       stack: ["React", "TypeScript", "Tailwind CSS"],
+      info: [
+        {
+          icon: externallink,
+          link: "https://github.com",
+        },
+        {
+          icon: github,
+          link: "https://github.com",
+        },
+      ],
     },
     {
       image:
@@ -191,6 +212,16 @@ export const myData = {
       description:
         "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
       stack: ["React", "TypeScript", "Tailwind CSS"],
+      info: [
+        {
+          icon: externallink,
+          link: "https://github.com",
+        },
+        {
+          icon: github,
+          link: "https://github.com",
+        },
+      ],
     },
   ],
   contact: [
@@ -202,7 +233,7 @@ export const myData = {
     {
       icon: MapPin,
       name: "Location",
-      value: "Nigeiia",
+      value: "Nigeria",
     },
     {
       icon: Phone,
