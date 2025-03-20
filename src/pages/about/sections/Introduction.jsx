@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../../components/elements/form/Button";
 import { ArrowRight, Download } from "lucide-react";
-import { myData } from "../data/aboutData";
+import { myData } from "../../../components/data/allData";
 import photo from "../../../assets/images/wale.jpg";
 
 const Introduction = (className = "") => {

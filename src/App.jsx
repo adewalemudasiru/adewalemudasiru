@@ -10,6 +10,9 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import Projects from "./pages/projects/Projects";
+import Contact from "./pages/contact/Contact";
+import Test from "./pages/test";
 
 const PrivateRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +20,9 @@ const PrivateRouter = createBrowserRouter(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/index" element={<Test />} />
       </Route>
     </>
   )
