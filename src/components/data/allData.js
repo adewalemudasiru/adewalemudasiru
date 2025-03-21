@@ -99,7 +99,7 @@ export const myData = {
       period: "2024",
       description:
         "Leading development of modern web applications using React and Next.js",
-      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      technologies: ["React", "TypeScript", "Tailwind"],
     },
     {
       id: 2,
@@ -109,7 +109,7 @@ export const myData = {
       period: "2024",
       description:
         "Built a custom websites that lets Nigerians to find the current average price of farm produce using React, TypeScript, CSS and Tailwind CSS",
-      technologies: ["React", "Typescript", "CSS", "Tailwind CSS"],
+      technologies: ["React", "Typescript", "CSS", "Tailwind"],
     },
   ],
   stack: [
@@ -138,7 +138,7 @@ export const myData = {
       icon: js,
     },
     {
-      name: "Tailwind CSS",
+      name: "Tailwind",
       icon: tailwind,
     },
   ],
@@ -175,7 +175,7 @@ export const myData = {
       title: "Chat App",
       description:
         "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
-      stack: ["React", "TypeScript", "Tailwind CSS"],
+      stack: ["React", "TypeScript", "Tailwind"],
       info: [
         {
           icon: externallink,
@@ -193,7 +193,7 @@ export const myData = {
       title: "Ecommerce App",
       description:
         "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
-      stack: ["React", "TypeScript", "Tailwind CSS"],
+      stack: ["React", "TypeScript", "Tailwind"],
       info: [
         {
           icon: externallink,
@@ -211,7 +211,7 @@ export const myData = {
       title: "My Portfolio",
       description:
         "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
-      stack: ["React", "TypeScript", "Tailwind CSS"],
+      stack: ["React", "TypeScript", "CSS", "Tailwind"],
       info: [
         {
           icon: externallink,

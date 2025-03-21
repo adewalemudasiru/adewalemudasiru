@@ -1,7 +1,6 @@
 import React from "react";
 import { myData } from "../../components/data/allData";
-import git from "../../assets/icons/git.svg";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { TechStack } from "../../components/ui/TechStack";
 
 const Projects = () => {
   const [firsProject, ...restOfProjects] = myData.projects;
@@ -88,13 +87,7 @@ const Projects = () => {
               <div className="p-6">
                 <h4 className="text-xl font-bold mb-3">{project.title}</h4>
                 <p className="text-md mb-4">{project.description}</p>
-                <ul className="flex gap-3">
-                  {project.stack.map((item) => (
-                    <li className="text-xs tracking-wide font-semibold bg-amber-50 px-2 py-1 rounded-full">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <TechStack technologies={project.stack} />
               </div>
             </div>
           ))}
