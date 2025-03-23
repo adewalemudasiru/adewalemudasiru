@@ -5,24 +5,27 @@ const Socials = ({ variant = "default" }) => {
   const getVariant = () => {
     switch (variant) {
       case "home":
-        return "bg-teal-50 p-2 border border-gray-100 transition-colors ease-in-out duration-500 hover:border-teal-500 rounded-md";
+        return "";
       case "footer":
-        return "bg-teal-50 p-2 rounded-md";
+        return "";
       default:
-        return "bg-teal-50 text-teal-500";
+        return "";
     }
   };
   return (
     <div className="flex gap-3">
       {myData.social.map((icon) => (
-        <div key={icon.name} className={`${getVariant()}  cursor-pointer`}>
+        <div
+          key={icon.name}
+          className={`p-3 border border-borderLight hover:border-teal-500 rounded-lg bg-iconBackground transition-transform ease-out duration-200 cursor-pointer`}
+        >
           <a
             href={icon.link}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={icon.name}
           >
-            <img src={icon.logo} alt={icon.name} className="w-5 h-5" />
+            <icon.name size={20} style={{ color: "var(--color-iconColor)" }} />
           </a>
         </div>
       ))}

@@ -12,6 +12,7 @@ import {
   Mail,
   Clock,
 } from "lucide-react";
+import { LuGithub, LuLinkedin, LuYoutube } from "react-icons/lu";
 import html from "../../assets/icons/html5.svg";
 import css from "../../assets/icons/css3.svg";
 import js from "../../assets/icons/javascript.svg";
@@ -49,17 +50,17 @@ export const myData = {
   ],
   social: [
     {
-      name: "github",
+      name: LuGithub,
       link: "https://github.com",
       logo: github,
     },
     {
-      name: "linkedin",
+      name: LuLinkedin,
       link: "https://linkedin.com",
       logo: linkedin,
     },
     {
-      name: "youtube",
+      name: LuYoutube,
       link: "https://youtube.com",
       logo: youtube,
     },
@@ -170,7 +171,7 @@ export const myData = {
   projects: [
     {
       image:
-        "https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png",
+        "https://cdn.pixabay.com/photo/2022/03/08/17/34/wallpaper-7056240_960_720.jpg",
 
       title: "Chat App",
       description:

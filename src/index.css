@@ -1,39 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 :root {
-  font-family: "SUSE", sans-serif;
-  /* color-scheme: light dark; */
+  font-family: "Inter", sans-serif;
 }
 
-.light {
-  --background: 245, 245, 245;
+@theme {
+  --color-textPrimary: hsl(var(--txt));
+  --color-textSecondary: hsl(var(--dtxt));
 
-  --border: 212, 212, 212;
-  --card: 255, 255, 255;
+  --color-borderLight: hsl(var(--pbdr));
+  --color-borderStrong: hsl(var(--sbdr));
 
-  --copy-primary: 23, 23, 23;
-  --copy-secondary: 115, 115, 115;
+  --color-accentPrimary: hsl(var(--pac));
+  --color-accentHover: hsl;
 
-  --cta: 139, 92, 246;
-  --cta-active: 124, 58, 237;
-  --cta-text: 255, 255, 255;
+  --color-cardBackground: hsl(var(--card));
 
-  background: rgba(var(--background));
+  --color-backgroundMain: hsl(var(--bgMain));
+  --color-backgroundAlt: hsl(var(--bgAlt));
+
+  --color-iconColor: hsl(var(--icon));
+  --color-iconBackground: var(--iconBg);
 }
 
-.dark {
-  --background: 0, 0, 0;
+@layer base {
+  :root[data-theme="light"] {
+    --txt: 215, 14%, 34%;
 
-  --border: 38, 38, 38;
-  --card: 23, 23, 23;
+    --pbdr: 220, 13%, 91%;
+    --sbdr: 220, 13%, 91%;
+    --pac: 166.15, 76.47%, 96.67%;
+    --card: 0, 0%, 100%;
+    --bgMain: 0, 0%, 97.3%;
+    --bgAlt: 0, 0%, 100%;
+    --icon: 0, 0%, 0%;
+    --iconBg: 0, 0%, 100%;
+  }
 
-  --copy-primary: 250, 250, 250;
-  --copy-secondary: 115, 115, 115;
-
-  --cta: 99, 102, 241;
-  --cta-active: 79, 70, 229;
-  --cta-text: 255, 255, 255;
-
-  background: rgba(var(--background));
+  :root[data-theme="dark"] {
+    --txt: 220, 8.94%, 46.08%;
+    --dtxt: 216, 33%, 68%;
+    --pbdr: 217, 49%, 20%;
+    --sbdr: 220, 14%, 96%;
+    --pac: 166.15, 76.47%, 96.67%;
+    --card: 222, 44%, 13%;
+    --bgMain: 223, 47%, 11%;
+    --bgAlt: 222, 44%, 13%;
+    --icon: 216, 33%, 68%;
+    --iconBg: transparent;
+  }
 }

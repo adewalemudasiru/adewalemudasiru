@@ -8,7 +8,7 @@ const Introduction = (className = "") => {
   return (
     <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 ${className}`}>
       <div>
-        <div className="text-lg space-y-3 mb-8">
+        <div className="text-lg space-y-3 mb-8 text-textPrimary">
           <p>
             I am a web developer with 6 months of experience. I have worked on 3
             projects for 2 clients using 2 frameworks. I am passionate about
@@ -35,14 +35,16 @@ const Introduction = (className = "") => {
             {myData.card.map((item) => (
               <div
                 key={item.subtitle}
-                className="flex items-center gap-4 bg-amber-50 p-4 rounded-xl h-full border border-transparent hover:border-teal-500 overflow-hidden transition-all ease-in-out duration-500"
+                className="flex items-center gap-4 bg-cardBackground p-4 rounded-xl h-full border border-borderLight hover:border-teal-500 overflow-hidden transition-all ease-in-out duration-500"
               >
                 <div className="p-2 bg-teal-50 rounded-lg shrink-0">
-                  <item.icon size={24} className="text-teal-500" />
+                  <item.icon size={20} className="text-teal-500" />
                 </div>
                 <div>
-                  <p className="font-bold text-2xl">{item.title}</p>
-                  <p className="text-sm">{item.subtitle}</p>
+                  <p className="font-bold text-2xl text-textSecondary">
+                    {item.title}
+                  </p>
+                  <p className="text-sm text-textPrimary">{item.subtitle}</p>
                 </div>
               </div>
             ))}

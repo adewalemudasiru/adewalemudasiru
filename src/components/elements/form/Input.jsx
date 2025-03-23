@@ -14,7 +14,7 @@ const Input = ({
       onChange={onChange}
       placeholder={placeholder}
       className={twMerge(
-        "w-full outline-none border border-gray-300 px-4 py-2 rounded-md",
+        "w-full outline-none text-textSecondary bg-cardBackground border border-borderLight px-4 py-3 rounded-xl",
         className
       )}
       {...props}

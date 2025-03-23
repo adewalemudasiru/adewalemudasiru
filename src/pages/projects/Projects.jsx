@@ -7,16 +7,20 @@ const Projects = () => {
   return (
     <div>
       <div>
-        <h2 className="text-center text-5xl font-bold mb-6">Projects</h2>
-        <p className="max-w-2xl mx-auto text-center text-lg leading-relaxed mb-12">
+        <h2 className="text-center text-5xl text-textSecondary font-bold mb-6">
+          Projects
+        </h2>
+        <p className="max-w-2xl mx-auto text-center text-lg text-textPrimary leading-relaxed mb-12">
           Explore my portfolio of projects showcasing my expertise in web
           development, from responsive applications to innovative solutions
           using modern technologies.
         </p>
       </div>
       <div className="mb-12">
-        <h3 className="text-2xl font-bold mb-3">Latest Project</h3>
-        <div className="group grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border-0 border-gray-100 hover:border hover:border-teal-500 shadow-md hover:shadow-lg transition ease-in-out duration-300">
+        <h3 className="text-2xl text-textSecondary font-bold mb-3">
+          Latest Project
+        </h3>
+        <div className="group grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border border-borderLight hover:border-teal-500 bg-cardBackround shadow-md hover:shadow-lg transition ease-in-out duration-300">
           <div className="relative overflow-hidden ">
             <img
               src={firsProject.image}
@@ -41,11 +45,15 @@ const Projects = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center p-6 mt-6 md:mt-0">
-            <h4 className="text-2xl font-bold mb-3">{firsProject.title}</h4>
-            <p className="text-lg mb-4">{firsProject.description}</p>
+            <h4 className="text-2xl text-textSecondary font-bold mb-3">
+              {firsProject.title}
+            </h4>
+            <p className="text-lg text-textPrimary mb-4">
+              {firsProject.description}
+            </p>
             <ul className="flex gap-3 mt-auto">
               {firsProject.stack.map((item) => (
-                <li className="text-xs tracking-wide font-semibold bg-amber-50 px-2 py-1 rounded-full">
+                <li className="text-xs text-textPrimary tracking-wide font-semibold bg-teal-500/20 px-2 py-1 rounded-full">
                   {item}
                 </li>
               ))}
@@ -54,10 +62,12 @@ const Projects = () => {
         </div>
       </div>
       <div>
-        <h3 className="text-2xl font-bold mb-3">All Projects</h3>
+        <h3 className="text-2xl text-textSecondary font-bold mb-3">
+          All Projects
+        </h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {restOfProjects.map((project) => (
-            <div className="group rounded-2xl overflow-hidden border-0 border-gray-100 hover:border hover:border-teal-500 shadow-md hover:shadow-lg transition ease-in-out duration-300">
+            <div className="group rounded-2xl overflow-hidden border border-borderLight hover:border hover:border-teal-500 bg-cardBackround shadow-md hover:shadow-lg transition ease-in-out duration-300">
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
@@ -85,8 +95,12 @@ const Projects = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h4 className="text-xl font-bold mb-3">{project.title}</h4>
-                <p className="text-md mb-4">{project.description}</p>
+                <h4 className="text-xl text-textSecondary font-bold mb-3">
+                  {project.title}
+                </h4>
+                <p className="text-md text-textPrimary mb-4">
+                  {project.description}
+                </p>
                 <TechStack technologies={project.stack} />
               </div>
             </div>
