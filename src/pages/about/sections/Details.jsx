@@ -16,7 +16,7 @@ const Details = () => {
                 key={exp.company}
                 className="flex items-start gap-4 bg-cardBackground border border-borderLight rounded-xl p-6"
               >
-                <div className="p-2 bg-teal-50 rounded-md">
+                <div className="p-2 bg-teal-500/10 rounded-lg">
                   <exp.icon color="teal" size={20} />
                 </div>
                 <div className="flex-1">
@@ -69,7 +69,7 @@ const Details = () => {
                 key={edu.certificate}
                 className="flex items-start gap-3 bg-cardBackground p-6 rounded-2xl border border-borderLight hover:border-teal-500 transition-all ease-in-out duration-500"
               >
-                <div className="bg-teal-50 p-2 rounded-md">
+                <div className="bg-teal-500/10 p-2 rounded-lg">
                   <edu.icon color="teal" />
                 </div>
                 <div className="w-full">
@@ -88,15 +88,20 @@ const Details = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-bold mb-3">Badges</h3>
+          <h3 className="text-2xl text-textSecondary font-bold mb-3">Badges</h3>
           <div>
             {myData.badges.map((badge) => (
-              <div>
-                <div>
-                  <badge.icon />
-                  <span>{badge.subtitle}</span>
+              <div className="p-6 bg-cardBackground border border-borderLight rounded-2xl hover:border-teal-500 transition-all ease-in-out duration-500">
+                <div className="flex items-center gap-3">
+                  <div className="bg-teal-500/10 p-2 rounded-lg">
+                    <badge.icon color="teal" />
+                  </div>
+
+                  <div>
+                    <span className="text-textPrimary">{badge.subtitle}</span>
+                    <div className="text-textSecondary">{badge.title}</div>
+                  </div>
                 </div>
-                <div>{badge.title}</div>
               </div>
             ))}
           </div>

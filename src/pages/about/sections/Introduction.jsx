@@ -22,7 +22,9 @@ const Introduction = (className = "") => {
           </p>
         </div>
         <div className="flex gap-4 mb-8">
-          <Button endIcon={<ArrowRight size={16} />}>Get In Touch</Button>
+          <a href="/contact" rel="noopener noreferrer" target="_blank">
+            <Button endIcon={<ArrowRight size={16} />}>Get In Touch</Button>
+          </a>
           <Button
             endIcon={<Download size={16} />}
             className="bg-transparent outline-none border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white"
@@ -37,7 +39,7 @@ const Introduction = (className = "") => {
                 key={item.subtitle}
                 className="flex items-center gap-4 bg-cardBackground p-4 rounded-xl h-full border border-borderLight hover:border-teal-500 overflow-hidden transition-all ease-in-out duration-500"
               >
-                <div className="p-2 bg-teal-50 rounded-lg shrink-0">
+                <div className="p-2 bg-teal-500/10 rounded-lg shrink-0">
                   <item.icon size={20} className="text-teal-500" />
                 </div>
                 <div>

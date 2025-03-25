@@ -51,17 +51,17 @@ export const myData = {
   social: [
     {
       name: LuGithub,
-      link: "https://github.com",
+      link: "https://github.com/adewalemudasiru",
       logo: github,
     },
     {
       name: LuLinkedin,
-      link: "https://linkedin.com",
+      link: "https://www.linkedin.com/in/adewale-mudasiru/",
       logo: linkedin,
     },
     {
       name: LuYoutube,
-      link: "https://youtube.com",
+      link: "https://www.youtube.com/@thetechsbyte",
       logo: youtube,
     },
   ],
@@ -245,6 +245,20 @@ export const myData = {
       icon: Clock,
       name: "Office Hours",
       value: "Mon - Fri",
+    },
+  ],
+  footer: [
+    {
+      name: "About",
+      link: "/about",
+    },
+    {
+      name: "Projects",
+      link: "/projects",
+    },
+    {
+      name: "Contact",
+      link: "/contact",
     },
   ],
 };

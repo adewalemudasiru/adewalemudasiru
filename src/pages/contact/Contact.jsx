@@ -23,9 +23,9 @@ const Contact = () => {
                 {myData.contact.map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-center p-4 gap-4 bg-cardBackground border border-borderLight rounded-2xl"
+                    className="flex items-center p-4 gap-4 bg-cardBackground border border-borderLight hover:border-teal-500 transition ease-in-out duration-300 rounded-2xl"
                   >
-                    <div className="bg-teal-50 p-2 rounded-md">
+                    <div className="bg-teal-500/10 p-2 rounded-lg">
                       <item.icon color="teal" size={20} />
                     </div>
                     <div>

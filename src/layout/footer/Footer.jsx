@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUp } from "lucide-react";
 import Socials from "../../components/ui/Socials";
+import { myData } from "../../components/data/allData";
 
 const Footer = ({ className = "" }) => {
   return (
@@ -20,9 +21,20 @@ const Footer = ({ className = "" }) => {
         <div>
           <h3 className="mb-3 text-textSecondary font-semibold">Quick Links</h3>
           <div className="flex flex-col text-textPrimary">
-            <a href="">About</a>
-            <a href="">Projects</a>
-            <a href="">Contact</a>
+            {myData.footer.map((item) => (
+              <ul key={item.name} className="mb-3">
+                <li>
+                  <a
+                    href={item.link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="hover:text-teal-500 transition ease-in-out duration-300"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              </ul>
+            ))}
           </div>
         </div>
         <div>
