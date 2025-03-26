@@ -12,14 +12,14 @@ const Navigation = () => {
             <NavLink
               to={item.path}
               className={({ isActive }) =>
-                isActive
-                  ? "text-teal-500 transition-colors ease-in-out duration-300"
-                  : "text-black hover:text-teal-500 transition-colors ease-in-out duration-300"
+                `group transition-colors ease-in-out duration-300 ${
+                  isActive ? "text-teal-500" : "text-black hover:text-teal-500"
+                }`
               }
             >
               <item.icon
                 size={20}
-                style={{ color: "var(--color-iconColor)" }}
+                className="text-[var(--color-iconColor)] group-hover:text-teal-500 group-focus:text-teal-500 group-[.text-teal-500]:text-teal-500 transition-colors duration-300"
               />
             </NavLink>
           </li>

@@ -5,6 +5,15 @@ import TextArea from "../form/TextArea";
 import Button from "../form/Button";
 import { LoaderCircle, Send } from "lucide-react";
 
+/**
+ * A contact form component that allows users to send an email to the website
+ * owner using EmailJS. The component renders a form with fields for name,
+ * email, subject, and message. When the form is submitted, the component sends
+ * an email using EmailJS and displays a success message or an error message
+ * depending on whether the email was sent successfully or not.
+ *
+ * @returns {React.ReactElement} The contact form component.
+ */
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,8 +39,9 @@ const ContactForm = () => {
       to_name: "Adewale Mudasiru",
     };
 
-    // Set loading to true before sending the emaiil
+    // Set loading to true before sending the email
     setLoading(true);
+    setButtonText("Sending...");
 
     emailjs
       .send(serviceId, templateId, templateParams, publicKey)
@@ -41,17 +51,20 @@ const ContactForm = () => {
         setEmail("");
         setSubject("");
         setMessage("");
+
         setButtonText("Message Sent");
-        setLoading(false); // Set loading to false after sending the email
+        setTimeout(() => setButtonText("Send Message"), 3000); // Reset button text after 3 seconds
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Email sending failed:", error);
-        setLoading(false); // Set loading to false if email sending fails
+        setButtonText("Send Message");
+        setLoading(false);
       });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6 mt-6">
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="text-textPrimary">

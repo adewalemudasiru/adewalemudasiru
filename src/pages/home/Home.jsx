@@ -3,6 +3,12 @@ import Button from "../../components/elements/form/Button";
 import { ArrowRight } from "lucide-react";
 import Socials from "../../components/ui/Socials";
 
+/**
+ * The home page of the website, featuring a hero section with a heading,
+ * subheading, and call-to-action button, as well as a social media section.
+ *
+ * @returns {React.ReactElement} The home page component.
+ */
 const Home = () => {
   return (
     <div className="-mt-24">
@@ -31,10 +37,12 @@ const Home = () => {
         </div>
         <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
           <div>
-            <Button endIcon={<ArrowRight size={16} />}>Let's talk</Button>
+            <a href="/contact">
+              <Button endIcon={<ArrowRight size={16} />}>Let's talk</Button>
+            </a>
           </div>
           <div>
-            <Socials variant="home" />
+            <Socials />
           </div>
         </div>
       </div>

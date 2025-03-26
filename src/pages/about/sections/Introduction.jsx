@@ -4,6 +4,14 @@ import { ArrowRight, Download } from "lucide-react";
 import { myData } from "../../../components/data/allData";
 import photo from "../../../assets/images/wale.jpg";
 
+/**
+ * A component that renders the introduction section of the about page.
+ *
+ * @param {string} [className] - An optional className to apply to the outermost
+ *   element of the component.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 const Introduction = (className = "") => {
   return (
     <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 ${className}`}>
@@ -63,7 +71,7 @@ const Introduction = (className = "") => {
             alt="Adewale Mudasiru"
           />
         </div>
-        <div className="absolute inset-0 rounded-2xl bg-teal-500/10 rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+        <div className="absolute inset-0 rounded-2xl bg-teal-500/20 rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
       </div>
     </div>
   );

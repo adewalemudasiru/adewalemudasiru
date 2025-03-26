@@ -239,7 +239,7 @@ export const myData = {
     {
       icon: Phone,
       name: "Phone",
-      value: "08067627878",
+      value: "+234 806 762 7878",
     },
     {
       icon: Clock,

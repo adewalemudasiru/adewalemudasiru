@@ -2,6 +2,12 @@ import React from "react";
 import { myData } from "../../../components/data/allData";
 import { TechStack } from "../../../components/ui/TechStack";
 
+/**
+ * A component that renders my experience, skills, education, and badges on the
+ * about page.
+ *
+ * @returns {React.ReactElement} The Details component.
+ */
 const Details = () => {
   return (
     <div className="mt-12 grid md:grid-cols-2 gap-12">

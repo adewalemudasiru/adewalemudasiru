@@ -3,6 +3,14 @@ import { ArrowUp } from "lucide-react";
 import Socials from "../../components/ui/Socials";
 import { myData } from "../../components/data/allData";
 
+/**
+ * A component that renders the footer section of the website.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - The CSS class to apply to the footer.
+ *
+ * @returns {JSX.Element} The rendered footer component.
+ */
 const Footer = ({ className = "" }) => {
   return (
     <footer
@@ -20,36 +28,28 @@ const Footer = ({ className = "" }) => {
         </div>
         <div>
           <h3 className="mb-3 text-textSecondary font-semibold">Quick Links</h3>
-          <div className="flex flex-col text-textPrimary">
-            {myData.footer.map((item) => (
-              <ul key={item.name} className="mb-3">
-                <li>
-                  <a
-                    href={item.link}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="hover:text-teal-500 transition ease-in-out duration-300"
-                  >
-                    {item.name}
-                  </a>
-                </li>
-              </ul>
+          <ul className="flex flex-col text-textPrimary">
+            {myData.footer.map((link) => (
+              <li key={link.name} className="mb-3">
+                <a
+                  href={link.link}
+                  className="hover:text-teal-500 transition ease-in-out duration-300"
+                >
+                  {link.name}
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
         <div>
           <h3 className="mb-3 text-textSecondary font-semibold">Connect</h3>
-          <Socials variant="footer" />
+          <Socials variant="footer" colorvariant="footer" />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center text-textPrimary md:justify-between gap-y-3 md:gap-0  max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div>
-          <span>© 2025 Adewale Mudasiru. All rights reserved.</span>
-        </div>
-        <div>
-          <div className="w-fit cursor-pointer bg-white p-2 rounded-full shadow-lg">
-            <ArrowUp size={20} />
-          </div>
+      <div className="flex flex-col md:flex-row items-center text-textPrimary md:justify-between gap-y-3 md:gap-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <span>© 2025 Adewale Mudasiru. All rights reserved.</span>
+        <div className="w-fit cursor-pointer bg-white p-2 rounded-full shadow-lg">
+          <ArrowUp size={20} />
         </div>
       </div>
     </footer>

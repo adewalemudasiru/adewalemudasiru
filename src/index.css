@@ -13,7 +13,6 @@
   --color-borderStrong: hsl(var(--sbdr));
 
   --color-accentPrimary: hsl(var(--pac));
-  --color-accentHover: hsl;
 
   --color-cardBackground: hsl(var(--card));
 
@@ -21,13 +20,13 @@
   --color-backgroundAlt: hsl(var(--bgAlt));
 
   --color-iconColor: hsl(var(--icon));
+  --color-darkIconColor: hsl(var(--darkicon));
   --color-iconBackground: var(--iconBg);
 }
 
 @layer base {
   :root[data-theme="light"] {
     --txt: 215, 14%, 34%;
-
     --pbdr: 220, 13%, 91%;
     --sbdr: 220, 13%, 91%;
     --pac: 166.15, 76.47%, 96.67%;
@@ -48,6 +47,7 @@
     --bgMain: 223, 47%, 11%;
     --bgAlt: 222, 44%, 13%;
     --icon: 216, 33%, 68%;
+    --darkicon: 173, 80%, 40%;
     --iconBg: transparent;
   }
 }
