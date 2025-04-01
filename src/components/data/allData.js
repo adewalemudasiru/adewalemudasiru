@@ -1,3 +1,4 @@
+//icons
 import {
   House,
   User,
@@ -24,6 +25,11 @@ import tailwind from "../../assets/icons/tailwind.svg";
 import youtube from "../../assets/icons/youtube.svg";
 import linkedin from "../../assets/icons/linkedin.svg";
 import externallink from "../../assets/icons/external-link.svg";
+
+//images
+import shareshopship from "../../assets/images/shareshopship.jpg";
+import corperatesetup from "../../assets/images/corperatesetup.png";
+import crownreformed from "../../assets/images/crownreformed.png";
 
 export const myData = {
   navItems: [
@@ -95,22 +101,32 @@ export const myData = {
     {
       id: 1,
       icon: Calender,
-      jobTitle: "Frontend Developer",
-      company: "ShareShopShip",
-      period: "2024",
+      jobTitle: "Volunteer Frontend Developer",
+      company: "Corperate Setup",
+      period: "Ongoing",
       description:
-        "Leading development of modern web applications using React and Next.js",
+        "Redesigned client and admin interfaces, enhancing user experience and streamlining company incorporation, registration, and staff training workflows. ",
       technologies: ["React", "TypeScript", "Tailwind"],
     },
     {
       id: 2,
       icon: Calender,
       jobTitle: "Frontend Developer",
-      company: "Freelance",
+      company: "Crown Reformed",
+      period: "Ongoing",
+      description:
+        "Migrating church website from WordPress to React, TypeScript, and Tailwind CSS, modernizing functionality and user experience.",
+      technologies: ["React", "TypeScript", "Tailwind"],
+    },
+    {
+      id: 3,
+      icon: Calender,
+      jobTitle: "Freelance Frontend Developer",
+      company: "ShareShopShip",
       period: "2024",
       description:
-        "Built a custom websites that lets Nigerians to find the current average price of farm produce using React, TypeScript, CSS and Tailwind CSS",
-      technologies: ["React", "Typescript", "CSS", "Tailwind"],
+        "Developed back office interface using React, TypeScript, and Tailwind CSS, enabling custom ordering and vendor management capabilities.",
+      technologies: ["React", "TypeScript", "Tailwind"],
     },
   ],
   stack: [
@@ -170,58 +186,53 @@ export const myData = {
   ],
   projects: [
     {
-      image:
-        "https://cdn.pixabay.com/photo/2022/03/08/17/34/wallpaper-7056240_960_720.jpg",
+      image: shareshopship,
 
-      title: "Chat App",
-      description:
-        "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
+      title: "ShareShopShip",
+      description: "A multi-Vendor marketplace",
       stack: ["React", "TypeScript", "Tailwind"],
       info: [
         {
           icon: externallink,
-          link: "https://github.com",
+          link: "https://shareshopship.com",
         },
-        {
-          icon: github,
-          link: "https://github.com",
-        },
+        // {
+        //   icon: github,
+        //   link: "https://github.com",
+        // },
       ],
     },
     {
-      image:
-        "https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png",
-      title: "Ecommerce App",
+      image: corperatesetup,
+      title: "Corperate Setup",
+      description: "Redesigned client and admin interfaces ",
+      stack: ["React", "TypeScript", "javacript", "Tailwind"],
+      info: [
+        {
+          icon: externallink,
+          link: "https://corporate-setup.app/",
+        },
+        // {
+        //   icon: github,
+        //   link: "https://github.com",
+        // },
+      ],
+    },
+    {
+      image: crownreformed,
+      title: "Crown Reformed",
       description:
-        "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
+        "WordPress to React Migration, modernizing functionality and user experience",
       stack: ["React", "TypeScript", "Tailwind"],
       info: [
         {
           icon: externallink,
-          link: "https://github.com",
+          link: "https://crownreformed.org/",
         },
-        {
-          icon: github,
-          link: "https://github.com",
-        },
-      ],
-    },
-    {
-      image:
-        "https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png",
-      title: "My Portfolio",
-      description:
-        "lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quas.",
-      stack: ["React", "TypeScript", "CSS", "Tailwind"],
-      info: [
-        {
-          icon: externallink,
-          link: "https://github.com",
-        },
-        {
-          icon: github,
-          link: "https://github.com",
-        },
+        // {
+        //   icon: github,
+        //   link: "https://github.com",
+        // },
       ],
     },
   ],

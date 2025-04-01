@@ -17,7 +17,8 @@ const Introduction = (className = "") => {
     <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 ${className}`}>
       <div>
         <div className="text-lg space-y-3 mb-8 text-textPrimary">
-          <p>
+          <p className="relative">
+            <span className="absolute top-0 -left-4 w-1 h-full bg-teal-500"></span>
             I am a web developer with 6 months of experience. I have worked on 3
             projects for 2 clients using 2 frameworks. I am passionate about
             crafting seamless web experiences and compelling content. Let’s

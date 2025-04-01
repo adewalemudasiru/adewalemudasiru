@@ -9,8 +9,18 @@ const Button = ({
   children,
   onClick,
   className = "",
+  isHover = "default",
   ...props
 }) => {
+  const hoverEffect = () => {
+    switch (isHover) {
+      case "home":
+        return "hover:ml-4";
+      default:
+        return "";
+    }
+  };
+
   return (
     <button
       onClick={onClick}
@@ -24,7 +34,11 @@ const Button = ({
         <span className={`mr-2 ${startIconClassName}`}>{startIcon}</span>
       )}
       {children}
-      {endIcon && <span className={`ml-2 ${endIconClassName}`}>{endIcon}</span>}
+      {endIcon && (
+        <span className={`ml-2 ${hoverEffect()} ${endIconClassName}`}>
+          {endIcon}
+        </span>
+      )}
     </button>
   );
 };

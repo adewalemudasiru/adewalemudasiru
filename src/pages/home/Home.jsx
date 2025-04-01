@@ -38,7 +38,9 @@ const Home = () => {
         <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
           <div>
             <a href="/contact">
-              <Button endIcon={<ArrowRight size={16} />}>Let's talk</Button>
+              <Button endIcon={<ArrowRight size={16} isHover="home" />}>
+                Let's talk
+              </Button>
             </a>
           </div>
           <div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { myData } from "../../../components/data/allData";
 import { TechStack } from "../../../components/ui/TechStack";
+import { BriefcaseBusiness, CodeXml, BookText, Badge } from "lucide-react";
 
 /**
  * A component that renders my experience, skills, education, and badges on the
@@ -12,18 +13,19 @@ const Details = () => {
   return (
     <div className="mt-12 grid md:grid-cols-2 gap-12">
       <div>
-        <h3 className="text-2xl text-textSecondary font-bold mb-3 ">
-          Experience
+        <h3 className="flex items-center space-x-2 text-2xl text-textSecondary font-bold mb-3 ">
+          <BriefcaseBusiness className="text-teal-500" />
+          <span>Experience</span>
         </h3>
         <div className="grid gap-6">
           {myData.experience.map((exp) => {
             return (
               <div
                 key={exp.company}
-                className="flex items-start gap-4 bg-cardBackground border border-borderLight rounded-xl p-6"
+                className="flex items-start gap-4 bg-cardBackground border border-borderLight hover:border-teal-500 transition-color ease-in-out duration-300 rounded-xl p-6"
               >
                 <div className="p-2 bg-teal-500/10 rounded-lg">
-                  <exp.icon color="teal" size={20} />
+                  <exp.icon className="text-teal-500" size={20} />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-xl text-textSecondary font-bold">
@@ -44,7 +46,10 @@ const Details = () => {
 
       <div className="space-y-12">
         <div>
-          <h3 className="text-2xl text-textSecondary font-bold mb-3">Skills</h3>
+          <h3 className="flex items-center space-x-2 text-2xl text-textSecondary font-bold mb-3">
+            <CodeXml className="text-teal-500" />
+            <span>Skills</span>
+          </h3>
           <div className="grid grid-cols-2 gap-4">
             {myData.stack.map((skill) => (
               <div
@@ -66,8 +71,8 @@ const Details = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl text-textSecondary font-bold mb-3">
-            Education
+          <h3 className="flex items-center space-x-2 text-2xl text-textSecondary font-bold mb-3">
+            <BookText className="text-teal-500" /> <span>Education</span>
           </h3>
           <div className="grid gap-4">
             {myData.education.map((edu) => (
@@ -76,7 +81,7 @@ const Details = () => {
                 className="flex items-start gap-3 bg-cardBackground p-6 rounded-2xl border border-borderLight hover:border-teal-500 transition-all ease-in-out duration-500"
               >
                 <div className="bg-teal-500/10 p-2 rounded-lg">
-                  <edu.icon color="teal" />
+                  <edu.icon className="text-teal-500" />
                 </div>
                 <div className="w-full">
                   <span className="text-textPrimary">{edu.certificate}</span>
@@ -94,13 +99,15 @@ const Details = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl text-textSecondary font-bold mb-3">Badges</h3>
+          <h3 className="flex items-center space-x-2 text-2xl text-textSecondary font-bold mb-3">
+            <Badge className="text-teal-500" /> <span>Badges</span>
+          </h3>
           <div>
             {myData.badges.map((badge) => (
               <div className="p-6 bg-cardBackground border border-borderLight rounded-2xl hover:border-teal-500 transition-all ease-in-out duration-500">
                 <div className="flex items-center gap-3">
                   <div className="bg-teal-500/10 p-2 rounded-lg">
-                    <badge.icon color="teal" />
+                    <badge.icon className="text-teal-500" />
                   </div>
 
                   <div>

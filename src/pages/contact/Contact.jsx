@@ -38,8 +38,9 @@ const Contact = () => {
         </p>
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <h4 className="text-2xl text-textSecondary font-bold">
-              Contact Information
+            <h4 className="relative flex items-center text-2xl text-textSecondary font-bold">
+              <span className="absolute h-[1em] w-1 top-1 -left-3 bg-teal-500"></span>
+              <span> Contact Information</span>
             </h4>
             <div className="grid grid-cols-1 gap-y-6">{contactInfo}</div>
           </div>
