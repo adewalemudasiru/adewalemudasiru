@@ -113,7 +113,7 @@ export const myData = {
       icon: Calender,
       jobTitle: "Frontend Developer",
       company: "Crown Reformed",
-      period: "Ongoing",
+      period: "2024-2025",
       description:
         "Migrating church website from WordPress to React, TypeScript, and Tailwind CSS, modernizing functionality and user experience.",
       technologies: ["React", "TypeScript", "Tailwind"],
