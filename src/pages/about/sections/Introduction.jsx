@@ -1,5 +1,5 @@
-import React from "react";
-import Button from "../../../components/elements/form/Button";
+// import React from "react";
+import { Button } from "../../../components/ui/Button";
 import { ArrowRight, Download } from "lucide-react";
 import { myData } from "../../../components/data/allData";
 import photo from "../../../assets/images/wale.jpg";

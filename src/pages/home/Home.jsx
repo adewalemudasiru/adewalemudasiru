@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../components/elements/form/Button";
+import { Button } from "../../components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import Socials from "../../components/ui/Socials";
 
@@ -15,7 +15,7 @@ const Home = () => {
       <div className="flex flex-col gap-y-7 items-center text-center h-screen justify-center ">
         <div className="inline-flex items-center gap-2 border border-borderLight py-2 px-4 rounded-full bg-white/5">
           <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse "></span>
-          <span className="text-sm text-textPrimary ">
+          <span className="text-sm font-medium text-textPrimary ">
             Available for freelance work
           </span>
         </div>
@@ -23,7 +23,7 @@ const Home = () => {
           <h2 className="text-5xl font-bold text-textSecondary">
             Adewale Mudasiru
           </h2>
-          <p className="text-lg text-textPrimary">
+          <p className="text-lg font-medium text-textPrimary">
             Frontend developer{" "}
             <span className="text-teal-500">
               crafting intuitive, responsive web experiences
@@ -38,9 +38,7 @@ const Home = () => {
         <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
           <div>
             <a href="/contact">
-              <Button endIcon={<ArrowRight size={16} isHover="home" />}>
-                Let's talk
-              </Button>
+              <Button endIcon={<ArrowRight size={16} />}>Let's talk</Button>
             </a>
           </div>
           <div>

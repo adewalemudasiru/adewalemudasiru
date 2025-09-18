@@ -12,6 +12,7 @@ import {
   Phone,
   Mail,
   Clock,
+  Rss,
 } from "lucide-react";
 import { LuGithub, LuLinkedin, LuYoutube } from "react-icons/lu";
 import html from "../../assets/icons/html5.svg";
@@ -35,23 +36,33 @@ export const myData = {
   navItems: [
     {
       id: 1,
+      name: "Home",
       icon: House,
       path: "/",
     },
     {
       id: 2,
+      name: "About",
       icon: User,
       path: "/about",
     },
     {
       id: 3,
+      name: "Projects",
       icon: Code,
       path: "/projects",
     },
     {
-      id: 4,
+      id: 5,
+      name: "Contact",
       icon: Mail,
       path: "/contact",
+    },
+    {
+      id: 4,
+      name: "Blog",
+      icon: Rss,
+      path: "/blog",
     },
   ],
   social: [
@@ -179,6 +190,7 @@ export const myData = {
   ],
   badges: [
     {
+      id: 1,
       icon: GraduationCapIcon,
       title: "ALX Virtual Assistant",
       subtitle: "2024",

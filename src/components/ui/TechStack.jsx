@@ -1,5 +1,3 @@
-import React from "react";
-
 export const TechStack = ({ technologies = [], maxDisplay = 3 }) => {
   const displayedTech = technologies.slice(0, maxDisplay);
   const remainingCount = Math.max(0, technologies.length - maxDisplay);

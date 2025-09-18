@@ -1,33 +1,19 @@
-import React, { useState, useEffect } from "react";
+// components/ui/DarkModeToggle.jsx
 import { Moon, Sun } from "lucide-react";
 
-export const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") || "light";
-  });
-
-  const toggleDarkMode = () => {
-    const newTheme = darkMode === "light" ? "dark" : "light";
-    setDarkMode(newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", darkMode);
-  }, [darkMode]);
-
+export const DarkModeToggle = ({ isDarkMode, toggleDarkMode }) => {
   return (
     <button
       onClick={toggleDarkMode}
-      aria-label={darkMode === "dark" ? "Dark Mode" : "Light Mode"}
-      className="cursor-pointer bg-gray-100 p-2 hover:bg-gray-100 rounded-full transition-colors"
+      aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+      className="group cursor-pointer bg-gray-100 p-2 hover:bg-gray-100 rounded-full transition-colors dark:bg-gray-800 dark:hover:bg-gray-700"
     >
       <div
-        className="transform transition-transform duration-300 ease-in-out"
-        style={{ transform: `rotate(${darkMode === "dark" ? 360 : -180}deg)` }}
+        className="transform transition-transform duration-300 ease-in-out group-hover:scale-120"
+        style={{ transform: `rotate(${isDarkMode ? 360 : -180}deg)` }}
       >
-        {darkMode === "dark" ? (
-          <Moon size={20} className="text-[#0f8dca] " />
+        {isDarkMode ? (
+          <Moon size={20} className="text-[#0f8dca]" />
         ) : (
           <Sun size={20} className="text-yellow-500" />
         )}

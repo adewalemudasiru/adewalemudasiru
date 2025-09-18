@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import Input from "../form/Input";
-import TextArea from "../form/TextArea";
-import Button from "../form/Button";
+import { Input } from "../ui/Input";
+import { TextArea } from "../ui/TextArea";
+import { Button } from "../ui/Button";
 import { LoaderCircle, Send } from "lucide-react";
 
 /**
@@ -14,7 +14,7 @@ import { LoaderCircle, Send } from "lucide-react";
  *
  * @returns {React.ReactElement} The contact form component.
  */
-const ContactForm = () => {
+export const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -140,5 +140,3 @@ const ContactForm = () => {
     </form>
   );
 };
-
-export default ContactForm;

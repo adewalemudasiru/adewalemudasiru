@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap");
 @import "tailwindcss";
 
 :root {
-  font-family: "Inter", sans-serif;
+  font-family: "Geist Mono", "Inter", sans-serif;
+  background-color: var(--color-backgroundMain);
 }
 
 @theme {
@@ -22,6 +24,9 @@
   --color-iconColor: hsl(var(--icon));
   --color-darkIconColor: hsl(var(--darkicon));
   --color-iconBackground: var(--iconBg);
+  --color-floatingButton: var(--floatBg);
+
+  --color-line: hsl(var(--pbdr));
 }
 
 @layer base {
@@ -35,6 +40,7 @@
     --bgAlt: 0, 0%, 100%;
     --icon: 0, 0%, 0%;
     --iconBg: 0, 0%, 100%;
+    --floatBg: black;
   }
 
   :root[data-theme="dark"] {
@@ -49,5 +55,6 @@
     --icon: 216, 33%, 68%;
     --darkicon: 173, 80%, 40%;
     --iconBg: transparent;
+    --floatBg: white;
   }
 }

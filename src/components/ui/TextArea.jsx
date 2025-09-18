@@ -16,7 +16,7 @@ import { twMerge } from "tailwind-merge";
  * be entered into the text area.
  * @param {object} [props] - Any other props to apply to the text area.
  */
-const TextArea = ({
+export const TextArea = ({
   value,
   onChange,
   placeholder,
@@ -38,6 +38,12 @@ const TextArea = ({
         onChange={handleChange}
         maxLength={maxLength}
         placeholder={placeholder}
+        onFocus={(e) => {
+          e.target.placeholder = ""; // Clear the placeholder on focus
+        }}
+        onBlur={(e) => {
+          e.target.placeholder = placeholder; // Restore the placeholder on blur
+        }}
         className={twMerge(
           "w-full outline-none text-textSecondary bg-cardBackground border border-borderLight focus:border-teal-500 px-4 py-3 rounded-xl resize-none",
           className
@@ -50,5 +56,3 @@ const TextArea = ({
     </div>
   );
 };
-
-export default TextArea;

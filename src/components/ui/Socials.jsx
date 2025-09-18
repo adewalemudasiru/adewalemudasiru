@@ -52,6 +52,7 @@ const Socials = ({ variant = "home", colorvariant = "home" }) => {
     <div className="flex gap-3">
       {myData.social.map((icon) => (
         <a
+          key={icon.name}
           href={icon.link}
           rel="noopener noreferrer"
           aria-label={icon.name}
