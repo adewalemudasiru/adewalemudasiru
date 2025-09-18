@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import Navigation from "../navigation/Navigation";
 import { DarkModeToggle } from "../../components/ui/DarkModeToggle";
@@ -7,7 +8,9 @@ const Header = () => {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
   return (
     <div className="flex justify-between md:justify-normal items-center">
-      <h1 className="text-2xl font-bold text-textSecondary mr-4">AM</h1>
+      <Link to={"/"} className="cursor-pointer">
+        <h1 className="text-2xl font-bold text-textSecondary mr-4">AM</h1>
+      </Link>
       <div className="hidden md:block flex-grow h-[1px] bg-line" />
       <div className="flex items-center gap-3">
         <Navigation />
