@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowUp } from "lucide-react";
 import Socials from "../../components/ui/Socials";
 import { myData } from "../../components/data/allData";

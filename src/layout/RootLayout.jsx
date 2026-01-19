@@ -15,7 +15,7 @@ const RootLayout = () => {
       {/* Dark Mode Toggle */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-20"></div>
       <div className={twMerge("mt-4", layoutStyle)}>
-        <Header />
+        <Header className />
       </div>
       <main className={twMerge("pt-24 pb-12", layoutStyle)}>
         <Outlet />

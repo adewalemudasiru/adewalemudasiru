@@ -1,24 +1,5 @@
-import React from "react";
 import { myData } from "../data/allData";
-
-/**
- * Renders a list of social media icons with links.
- *
- * @param {Object} props - The component props.
- * @param {string} [props.variant="home"] - Determines the styling variant for the icons.
- * @param {string} [props.colorvariant="home"] - Determines the color variant for the icons.
- *
- * @returns {JSX.Element} A set of social media icons styled according to the provided variants.
- */
-
 const Socials = ({ variant = "home", colorvariant = "home" }) => {
-  /**
-   * Returns the styling variant for the social media icons based on the provided
-   * `variant` prop.
-   *
-   * @returns {string} A CSS class string that applies the correct styling variant
-   * for the icons.
-   */
   const getVariant = () => {
     switch (variant) {
       case "home":

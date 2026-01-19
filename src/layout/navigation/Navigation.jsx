@@ -2,6 +2,7 @@ import { myData } from "../../components/data/allData";
 import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
+ 
   return (
     <div className="h-12 hidden md:flex">
       <ul className="h-full bg-backgroudAlt flex justify-center items-center gap-6 py-2 px-6 border border-borderLight rounded-full shadow-lg backdrop-blur-md ">

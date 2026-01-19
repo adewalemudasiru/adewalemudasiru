@@ -1,30 +1,40 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
-import Navigation from "../navigation/Navigation";
+import { DesktopNavigation, MobileNavigation } from "../navigation/index";
 import { DarkModeToggle } from "../../components/ui/DarkModeToggle";
 import { useDarkMode } from "../../hooks/useDarkMode";
+import { useLockScroll } from "../../hooks/useLockScroll";
 
 const Header = () => {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
+  const [showMobileNavigation, setShowMobileNavigation] = useState(false);
+  useLockScroll(showMobileNavigation);
+
   return (
-    <div className="flex justify-between md:justify-normal items-center">
+    <div className="flex justify-between md:justify-normal items-center relative ">
       <Link to={"/"} className="cursor-pointer">
         <h1 className="text-2xl font-bold text-textSecondary mr-4">AM</h1>
       </Link>
       <div className="hidden md:block flex-grow h-[1px] bg-line" />
       <div className="flex items-center gap-3">
-        <Navigation />
+        <DesktopNavigation />
         <DarkModeToggle
           isDarkMode={isDarkMode}
           toggleDarkMode={toggleDarkMode}
         />
         <div
           className="md:hidden p-1.5 hover:bg-cardBackground text-textSecondary rounded-md cursor-pointer"
-          onClick={() => console.log("menu opened")}
+          onClick={() => setShowMobileNavigation(true)}
         >
           <Menu size={32} />
         </div>
       </div>
+
+      <MobileNavigation
+        open={showMobileNavigation}
+        onClose={() => setShowMobileNavigation(false)}
+      />
     </div>
   );
 };
