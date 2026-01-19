@@ -39,7 +39,7 @@ const MobileNavigation = ({ open, onClose }) => {
         ))}
       </ul>
 
-      <div className="mt-auto pb-4">
+      <div className="absolute bottom-0 pb-6">
         <h3 className="mb-4 text-textSecondary font-semibold">Connect</h3>
         <Socials />
       </div>
