@@ -4,12 +4,12 @@ import { Menu } from "lucide-react";
 import { DesktopNavigation, MobileNavigation } from "../navigation/index";
 import { DarkModeToggle } from "../../components/ui/DarkModeToggle";
 import { useDarkMode } from "../../hooks/useDarkMode";
-import { useLockScroll } from "../../hooks/useLockScroll";
+// import { useLockScroll } from "../../hooks/useLockScroll";
 
 const Header = () => {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
   const [showMobileNavigation, setShowMobileNavigation] = useState(false);
-  useLockScroll(showMobileNavigation);
+  // useLockScroll(showMobileNavigation);
 
   return (
     <div className="flex justify-between md:justify-normal items-center relative ">
