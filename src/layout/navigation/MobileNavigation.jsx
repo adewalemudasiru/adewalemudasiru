@@ -10,7 +10,7 @@ const MobileNavigation = ({ open, onClose }) => {
     <aside
       className={twMerge(
         "fixed top-0 right-0 bg-backgroundMain",
-        "h-screen w-full flex flex-col z-50 p-6 md:hidden",
+        "h-svh w-full flex flex-col z-50 p-6 md:hidden",
         open ? "translate-x-0" : "translate-x-full",
         "transform transition-transform duration-300 ease-in-out",
         "overflow-y-auto",
