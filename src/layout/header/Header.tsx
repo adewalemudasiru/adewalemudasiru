@@ -32,7 +32,7 @@ const Header = () => {
       </div>
 
       <MobileNavigation
-        open={showMobileNavigation}
+        isOpen={showMobileNavigation}
         onClose={() => setShowMobileNavigation(false)}
       />
     </div>

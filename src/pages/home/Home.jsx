@@ -12,8 +12,17 @@ import Socials from "../../components/ui/Socials";
 const Home = () => {
   return (
     <div className="-mt-24">
-      <div className="flex flex-col gap-y-7 items-center text-center h-svh justify-center ">
-        <div className="inline-flex items-center gap-2 border border-borderLight py-2 px-4 rounded-full bg-white/5">
+      <div
+        className="flex flex-col gap-y-7 
+      items-center text-center 
+      h-svh justify-center "
+      >
+        <div
+          className="inline-flex items-center gap-2 
+        border border-borderLight 
+        py-2 px-4 rounded-full 
+        bg-white/5"
+        >
           <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse "></span>
           <span className="text-sm font-medium text-textPrimary ">
             Available for freelance work
@@ -35,7 +44,12 @@ const Home = () => {
             .
           </p>
         </div>
-        <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
+        <div
+          className="flex flex-col 
+        md:flex-row 
+        md:items-center space-y-4 
+        md:space-y-0 md:space-x-4"
+        >
           <div>
             <a href="/contact">
               <Button endIcon={<ArrowRight size={16} />}>Let's talk</Button>
