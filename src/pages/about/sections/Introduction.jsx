@@ -4,20 +4,28 @@ import { ArrowRight, Download } from "lucide-react";
 import { myData } from "../../../components/data/allData";
 import photo from "../../../assets/images/wale.jpg";
 
-/**
- * A component that renders the introduction section of the about page.
- *
- * @param {string} [className] - An optional className to apply to the outermost
- *   element of the component.
- *
- * @returns {JSX.Element} The rendered component.
- */
 const Introduction = (className = "") => {
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 ${className}`}>
-      <div>
-        <div className="text-lg space-y-3 mb-8 text-textPrimary">
-          <p className="relative">
+    <div
+      className={`grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 ${className}`}
+    >
+      {/* Image section - appears first on mobile, second on desktop */}
+      <div className="image relative group aspect-[5/6] max-w-[500px] w-full order-1 md:order-2">
+        <div className="relative w-full h-full rounded-2xl overflow-hidden">
+          <img
+            loading="lazy"
+            decoding="async"
+            className="relative w-full h-full rounded-2xl object-cover z-10 hover:scale-105 transition-transform ease-in-out duration-300"
+            src={photo}
+            alt="Adewale Mudasiru"
+          />
+        </div>
+        <div className="absolute inset-0 rounded-2xl bg-teal-500/20 rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+      </div>
+      {/* Text content - appears second on mobile, first on desktop */}
+      <div className="order-2 md:order-1">
+        <div className="text-base sm:text-lg space-y-3 mb-6 sm:mb-8 text-textPrimary">
+          <p className="relative pl-4 sm:pl-6">
             <span className="absolute top-0 -left-4 w-1 h-full bg-teal-500"></span>
             I am a web developer with 6 months of experience. I have worked on 3
             projects for 2 clients using 2 frameworks. I am passionate about
@@ -30,49 +38,48 @@ const Introduction = (className = "") => {
             Marvel Cinematic Universe, and I love to travel.
           </p>
         </div>
-        <div className="flex gap-4 mb-8">
-          <a href="/contact" rel="noopener noreferrer" target="_blank">
-            <Button endIcon={<ArrowRight size={16} />}>Get In Touch</Button>
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-6 sm:mb-8">
+          <a
+            href="#contact"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
+            <Button
+              endIcon={<ArrowRight size={16} />}
+              className="w-full sm:w-auto"
+            >
+              Get In Touch
+            </Button>
           </a>
           <Button
             endIcon={<Download size={16} />}
-            className="bg-transparent outline-none border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white"
+            className="bg-transparent outline-none border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white w-full sm:w-auto"
           >
             Resume
           </Button>
         </div>
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {myData.card.map((item) => (
               <div
                 key={item.subtitle}
-                className="flex items-center gap-4 bg-cardBackground p-4 rounded-xl h-full border border-borderLight hover:border-teal-500 overflow-hidden transition-all ease-in-out duration-500"
+                className="flex items-center gap-3 sm:gap-4 bg-cardBackground p-3 sm:p-4 rounded-xl h-full border border-borderLight hover:border-teal-500 overflow-hidden transition-all ease-in-out duration-500"
               >
                 <div className="p-2 bg-teal-500/10 rounded-lg shrink-0">
                   <item.icon size={20} className="text-teal-500" />
                 </div>
                 <div>
-                  <p className="font-bold text-2xl text-textSecondary">
+                  <p className="font-bold text-lg sm:text-2xl text-textSecondary">
                     {item.title}
                   </p>
-                  <p className="text-sm text-textPrimary">{item.subtitle}</p>
+                  <p className="text-xs sm:text-sm text-textPrimary">
+                    {item.subtitle}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
-      <div className="image relative group aspect-[5/6] max-w-[500px] w-full">
-        <div className="relative w-full h-full rounded-2xl overflow-hidden">
-          <img
-            loading="lazy"
-            decoding="async"
-            className="relative w-full h-full rounded-2xl object-cover z-10 hover:scale-105 transition-transform ease-in-out duration-300"
-            src={photo}
-            alt="Adewale Mudasiru"
-          />
-        </div>
-        <div className="absolute inset-0 rounded-2xl bg-teal-500/20 rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
       </div>
     </div>
   );

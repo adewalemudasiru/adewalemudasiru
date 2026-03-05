@@ -10,7 +10,7 @@ const MobileNavigation = ({ isOpen, onClose }) => {
     <aside
       className={twMerge(
         "fixed top-0 right-0 bg-backgroundMain",
-        "h-svh w-full flex flex-col z-50 p-6 md:hidden",
+        "h-svh w-full flex flex-col z-50 p-4 sm:p-6 md:hidden",
         isOpen ? "translate-x-0" : "translate-x-full",
         "transform transition-transform duration-300 ease-in-out",
         "overflow-y-auto",
@@ -22,13 +22,13 @@ const MobileNavigation = ({ isOpen, onClose }) => {
         </Button>
       </div>
 
-      <ul className="mt-8">
+      <ul className="mt-8 space-y-4">
         {myData.navItems.map((item) => (
-          <li key={item.id} className="mb-6">
+          <li key={item.id}>
             <NavLink
               to={item.path}
               className={({ isActive }) =>
-                `text-2xl font-semibold ${
+                `text-xl sm:text-2xl font-semibold block py-2 ${
                   isActive
                     ? "text-teal-500"
                     : "text-textSecondary hover:text-teal-500"
@@ -42,8 +42,10 @@ const MobileNavigation = ({ isOpen, onClose }) => {
         ))}
       </ul>
 
-      <div className="absolute bottom-0 pb-6">
-        <h3 className="mb-4 text-textSecondary font-semibold">Connect</h3>
+      <div className="mt-auto pt-8 pb-6">
+        <h3 className="mb-4 text-textSecondary font-semibold text-sm sm:text-base">
+          Connect
+        </h3>
         <Socials />
       </div>
     </aside>

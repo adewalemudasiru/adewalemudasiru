@@ -2,10 +2,9 @@ import { myData } from "../../components/data/allData";
 import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
- 
   return (
     <div className="h-12 hidden md:flex">
-      <ul className="h-full bg-backgroudAlt flex justify-center items-center gap-6 py-2 px-6 border border-borderLight rounded-full shadow-lg backdrop-blur-md ">
+      <ul className="h-full flex justify-center items-center gap-6 py-2 px-6 border border-borderLight rounded-full bg-backgroundMain/50 backdrop-blur-lg shadow-md">
         {myData.navItems.map((item) => (
           <li key={item.id} className="cursor-pointer font-semibold">
             <NavLink

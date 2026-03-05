@@ -28,9 +28,10 @@ const PrivateRouter = createBrowserRouter(
         <Route path="*" element={<div>404 Not Found</div>} />
       </Route>
       {/* You can add more routes or nested routes here if needed */}
-    </>
-  )
+    </>,
+  ),
 );
+
 const App = () => {
   return (
     <>

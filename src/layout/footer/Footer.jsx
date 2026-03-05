@@ -15,21 +15,23 @@ const Footer = ({ className = "" }) => {
     <footer
       className={`w-full h-auto border-t border-borderLight ${className}`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
         <div>
-          <h3 className="text-2xl text-textSecondary font-bold mb-3">
+          <h3 className="text-xl sm:text-2xl text-textSecondary font-bold mb-2 sm:mb-3">
             Adewale Mudasiru
           </h3>
-          <p className="text text-textPrimary">
+          <p className="text-sm sm:text-base text-textPrimary">
             Crafting seamless web experiences & compelling content. Let’s build
             something amazing! 🚀
           </p>
         </div>
         <div>
-          <h3 className="mb-3 text-textSecondary font-semibold">Quick Links</h3>
-          <ul className="flex flex-col text-textPrimary">
+          <h3 className="mb-3 text-sm sm:text-base text-textSecondary font-semibold">
+            Quick Links
+          </h3>
+          <ul className="flex flex-col text-sm sm:text-base text-textPrimary">
             {myData.footer.map((link) => (
-              <li key={link.name} className="mb-3">
+              <li key={link.name} className="mb-2 sm:mb-3">
                 <a
                   href={link.link}
                   className="hover:text-teal-500 transition ease-in-out duration-300"
@@ -41,14 +43,16 @@ const Footer = ({ className = "" }) => {
           </ul>
         </div>
         <div>
-          <h3 className="mb-3 text-textSecondary font-semibold">Connect</h3>
+          <h3 className="mb-3 text-sm sm:text-base text-textSecondary font-semibold">
+            Connect
+          </h3>
           <Socials variant="footer" colorvariant="footer" />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center text-textPrimary md:justify-between gap-y-3 md:gap-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between text-xs sm:text-sm text-textPrimary gap-y-3 sm:gap-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <span>© 2025 Adewale Mudasiru. All rights reserved.</span>
-        <div className="w-fit cursor-pointer bg-white p-2 rounded-full shadow-lg">
-          <ArrowUp size={20} />
+        <div className="w-fit cursor-pointer bg-white p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow">
+          <ArrowUp size={18} className="sm:w-5 sm:h-5" />
         </div>
       </div>
     </footer>
