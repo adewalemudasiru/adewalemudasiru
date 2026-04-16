@@ -11,8 +11,8 @@ const MobileNavigation = ({ isOpen, onClose }) => {
       className={twMerge(
         "fixed top-0 right-0 bg-backgroundMain",
         "h-svh w-full flex flex-col z-50 p-4 sm:p-6 md:hidden",
-        isOpen ? "translate-x-0" : "translate-x-full",
         "transform transition-transform duration-300 ease-in-out",
+        isOpen ? "translate-x-0" : "translate-x-full",
         "overflow-y-auto",
       )}
     >

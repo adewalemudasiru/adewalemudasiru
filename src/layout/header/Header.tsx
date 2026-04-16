@@ -44,12 +44,10 @@ const Header = ({ isMobile = false }) => {
         </div>
       </div>
 
-      {showMobileNavigation && (
-        <MobileNavigation
-          isOpen={showMobileNavigation}
-          onClose={() => setShowMobileNavigation(false)}
-        />
-      )}
+      <MobileNavigation
+        isOpen={showMobileNavigation}
+        onClose={() => setShowMobileNavigation(false)}
+      />
     </div>
   );
 };
