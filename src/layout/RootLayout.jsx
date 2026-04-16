@@ -24,7 +24,7 @@ const RootLayout = () => {
       <main
         className={
           isMobile
-            ? twMerge("flex-1 py-8 sm:py-12", layoutStyle)
+            ? twMerge("", layoutStyle)
             : twMerge("pt-12 sm:pt-16 md:pt-24 pb-8 sm:pb-12", layoutStyle)
         }
       >

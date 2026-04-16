@@ -27,10 +27,12 @@ const Introduction = (className = "") => {
         <div className="text-base sm:text-lg space-y-3 mb-6 sm:mb-8 text-textPrimary">
           <p className="relative pl-4 sm:pl-6">
             <span className="absolute top-0 -left-4 w-1 h-full bg-teal-500"></span>
-            I am a web developer with 6 months of experience. I have worked on 3
-            projects for 2 clients using 2 frameworks. I am passionate about
-            crafting seamless web experiences and compelling content. Let’s
-            build something amazing! 🚀
+            I am a web developer with more than a year of experience, adept at
+            transforming visions into reality across multiple projects and
+            frameworks. My core strength lies in designing and implementing web
+            solutions that offer seamless functionality. I am committed to
+            delivering high-quality, impactful web experiences and am always
+            seeking to build something truly amazing.
           </p>
           <p>
             When I'm not coding, you'll find me playing video games, watching

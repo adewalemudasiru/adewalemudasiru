@@ -112,15 +112,25 @@ export const myData = {
     {
       id: 1,
       icon: Calender,
-      jobTitle: "Volunteer Frontend Developer",
-      company: "Corperate Setup",
-      period: "Ongoing",
+      jobTitle: "Frontend Developer",
+      company: "Tecton Studio",
+      period: "2025-2026",
       description:
-        "Redesigned client and admin interfaces, enhancing user experience and streamlining company incorporation, registration, and staff training workflows. ",
+        "Built and integrated admin dashboard interfaces from Figma designs, including a dynamic form builder, real-time chat feature, and API integrations to support efficient data flow and responsive application behavior.",
       technologies: ["React", "TypeScript", "Tailwind"],
     },
     {
       id: 2,
+      icon: Calender,
+      jobTitle: "Volunteer Frontend Developer",
+      company: "Corperate Setup",
+      period: "Ongoing",
+      description:
+        "Redesigned client and admin interfaces, enhancing user experience and streamlining company incorporation, registration, and staff training workflows.",
+      technologies: ["React", "TypeScript", "Tailwind"],
+    },
+    {
+      id: 3,
       icon: Calender,
       jobTitle: "Frontend Developer",
       company: "Crown Reformed",
@@ -130,7 +140,7 @@ export const myData = {
       technologies: ["React", "TypeScript", "Tailwind"],
     },
     {
-      id: 3,
+      id: 4,
       icon: Calender,
       jobTitle: "Freelance Frontend Developer",
       company: "ShareShopShip",

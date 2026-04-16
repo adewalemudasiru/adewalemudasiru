@@ -5,11 +5,13 @@ import Socials from "../../components/ui/Socials";
 
 const Home = ({ isMobile = false }) => {
   return (
-    <div className={isMobile ? "" : "-mt-24"}>
+    <div
+      className={isMobile ? "flex items-center justify-center h-svh" : "-mt-24"}
+    >
       <div
         className={`flex flex-col gap-y-6 
-      items-center text-center 
-      ${isMobile ? "py-12 sm:py-16" : "h-svh"} justify-center`}
+      items-center text-center justify-center
+      ${isMobile ? "" : "h-svh"} `}
       >
         <div
           className="inline-flex items-center gap-2 
