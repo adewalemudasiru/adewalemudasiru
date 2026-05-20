@@ -31,6 +31,8 @@ import externallink from "../../assets/icons/external-link.svg";
 import shareshopship from "../../assets/images/shareshopship.jpg";
 import corperatesetup from "../../assets/images/corperatesetup.png";
 import crownreformed from "../../assets/images/crownreformed.png";
+import dkhomes from "../../assets/images/dkhomes.png";
+import yusfaith from "../../assets/images/yusfaith.png";
 
 export const myData = {
   navItems: [
@@ -86,19 +88,19 @@ export const myData = {
     {
       id: 1,
       icon: Trophy,
-      title: "6",
-      subtitle: "Months of experience",
+      title: "2",
+      subtitle: "Years of experience",
     },
     {
       id: 2,
       icon: Code,
-      title: "3",
+      title: "5",
       subtitle: "Projects",
     },
     {
       id: 3,
       icon: Users,
-      title: "2",
+      title: "5",
       subtitle: "Clients",
     },
     {
@@ -112,6 +114,26 @@ export const myData = {
     {
       id: 1,
       icon: Calender,
+      jobTitle: "Freelance UI/UX Designer & Frontend Developer",
+      company: "Yusfaith Portfolio",
+      period: "2025",
+      description:
+        "Redesigned and improved an existing personal portfolio website, focusing on modern UI structure, responsiveness, and enhanced user experience using React and Tailwind CSS.",
+      technologies: ["React", "Tailwind", "UI/UX Design"],
+    },
+    {
+      id: 2,
+      icon: Calender,
+      jobTitle: "Freelance Web Developer",
+      company: "DK Homes",
+      period: "2026",
+      description:
+        "Designed and developed a WordPress website for a real estate company specializing in land acquisition, property development, and investment opportunities, creating a professional online presence to showcase services and property listings.",
+      technologies: ["WordPress", "Elementor", "CSS"],
+    },
+    {
+      id: 3,
+      icon: Calender,
       jobTitle: "Frontend Developer",
       company: "Tecton Studio",
       period: "2025-2026",
@@ -120,7 +142,7 @@ export const myData = {
       technologies: ["React", "TypeScript", "Tailwind"],
     },
     {
-      id: 2,
+      id: 4,
       icon: Calender,
       jobTitle: "Volunteer Frontend Developer",
       company: "Corperate Setup",
@@ -130,7 +152,7 @@ export const myData = {
       technologies: ["React", "TypeScript", "Tailwind"],
     },
     {
-      id: 3,
+      id: 5,
       icon: Calender,
       jobTitle: "Frontend Developer",
       company: "Crown Reformed",
@@ -140,7 +162,7 @@ export const myData = {
       technologies: ["React", "TypeScript", "Tailwind"],
     },
     {
-      id: 4,
+      id: 6,
       icon: Calender,
       jobTitle: "Freelance Frontend Developer",
       company: "ShareShopShip",
@@ -207,6 +229,36 @@ export const myData = {
     },
   ],
   projects: [
+    {
+      image: yusfaith,
+      title: "Yusfaith Portfolio",
+      description:
+        "Redesigned and improved an existing personal portfolio website, focusing on modern UI structure, responsiveness, and overall user experience.",
+      stack: ["React", "Tailwind"],
+      info: [
+        {
+          icon: externallink,
+          link: "https://yusfaith-portfolio.vercel.app",
+        },
+      ],
+    },
+    {
+      image: dkhomes,
+      title: "DK Homes",
+      description:
+        "Designed and developed a WordPress website for a real estate company specializing in land acquisition, property development, and investment opportunities.",
+      stack: ["WordPress", "Elementor", "CSS"],
+      info: [
+        {
+          icon: externallink,
+          link: "https://dkhomes.ng/",
+        },
+        // {
+        //   icon: github,
+        //   link: "https://github.com",
+        // },
+      ],
+    },
     {
       image: shareshopship,
 

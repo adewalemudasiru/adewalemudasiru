@@ -27,12 +27,16 @@ const Introduction = (className = "") => {
         <div className="text-base sm:text-lg space-y-3 mb-6 sm:mb-8 text-textPrimary">
           <p className="relative pl-4 sm:pl-6">
             <span className="absolute top-0 -left-4 w-1 h-full bg-teal-500"></span>
-            I am a web developer with more than a year of experience, adept at
-            transforming visions into reality across multiple projects and
-            frameworks. My core strength lies in designing and implementing web
-            solutions that offer seamless functionality. I am committed to
-            delivering high-quality, impactful web experiences and am always
-            seeking to build something truly amazing.
+            Web developer with 2 years of experience building and delivering
+            modern web applications using React, TypeScript, and Tailwind CSS. I
+            focus on turning design ideas into functional, responsive, and
+            user-centered interfaces.
+          </p>
+          <p>
+            I specialize in frontend development, with strong attention to
+            performance, usability, and code quality. I enjoy building scalable
+            interfaces and improving existing systems to create better user
+            experiences.
           </p>
           <p>
             When I'm not coding, you'll find me playing video games, watching
