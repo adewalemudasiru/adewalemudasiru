@@ -3,6 +3,7 @@ import { Button } from "../../../components/ui/Button";
 import { ArrowRight, Download } from "lucide-react";
 import { myData } from "../../../components/data/allData";
 import photo from "../../../assets/images/wale.jpg";
+import adewalemudasiru from "../../../assets/adewalemudasiru.pdf";
 
 const Introduction = (className = "") => {
   return (
@@ -46,7 +47,7 @@ const Introduction = (className = "") => {
         </div>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-6 sm:mb-8">
           <a
-            href="#contact"
+            href="/contact"
             rel="noopener noreferrer"
             className="w-full sm:w-auto"
           >
@@ -57,12 +58,20 @@ const Introduction = (className = "") => {
               Get In Touch
             </Button>
           </a>
-          <Button
-            endIcon={<Download size={16} />}
-            className="bg-transparent outline-none border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white w-full sm:w-auto"
+          <a
+            href={adewalemudasiru}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Adewale-Mudasiru-Resume.pdf"
+            className="w-full sm:w-auto"
           >
-            Resume
-          </Button>
+            <Button
+              endIcon={<Download size={16} />}
+              className="bg-transparent outline-none border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white w-full sm:w-auto"
+            >
+              Resume
+            </Button>
+          </a>
         </div>
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
