@@ -3,11 +3,7 @@ import About from "../pages/about/About";
 import Projects from "../pages/projects/Projects";
 import Contact from "../pages/contact/Contact";
 
-/**
- * Mobile single-page layout that displays all sections on one scrollable page
- * for better mobile user experience
- */
-const MobileSinglePageLayout = () => {
+const MobileLayout = () => {
   return (
     <>
       {/* Home Section */}
@@ -33,4 +29,4 @@ const MobileSinglePageLayout = () => {
   );
 };
 
-export default MobileSinglePageLayout;
+export default MobileLayout;

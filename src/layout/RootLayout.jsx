@@ -3,7 +3,7 @@ import Footer from "./footer/Footer";
 import { Outlet } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 import { useIsMobile } from "../hooks/useIsMobile";
-import MobileSinglePageLayout from "./MobileSinglePageLayout";
+import MobileLayout from "./MobileLayout";
 
 const layoutStyle = "w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8";
 
@@ -28,7 +28,7 @@ const RootLayout = () => {
             : twMerge("pt-12 sm:pt-16 md:pt-24 pb-8 sm:pb-12", layoutStyle)
         }
       >
-        {isMobile ? <MobileSinglePageLayout /> : <Outlet />}
+        {isMobile ? <MobileLayout /> : <Outlet />}
       </main>
       <Footer className="bg-backgroundAlt" />
     </div>
