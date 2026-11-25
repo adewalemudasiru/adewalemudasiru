@@ -1,29 +1,20 @@
-// hooks/useDarkMode.js
 import { useState, useEffect } from "react";
 
+// index.html sets data-theme before paint (saved choice, else OS preference); this hook takes over from there.
 export const useDarkMode = () => {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Check if we're in a browser environment
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") === "dark";
-    }
-    return false; // Default to light mode for SSR
-  });
+  const [isDarkMode, setIsDarkMode] = useState(
+    () => document.documentElement.dataset.theme === "dark",
+  );
 
   const toggleDarkMode = () => {
-    setIsDarkMode((prev) => !prev);
+    setIsDarkMode((prev) => {
+      localStorage.setItem("theme", prev ? "light" : "dark");
+      return !prev;
+    });
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Apply the theme to the document
-      document.documentElement.setAttribute(
-        "data-theme",
-        isDarkMode ? "dark" : "light"
-      );
-      // Save to localStorage
-      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    }
+    document.documentElement.dataset.theme = isDarkMode ? "dark" : "light";
   }, [isDarkMode]);
 
   return [isDarkMode, toggleDarkMode];

@@ -1,36 +1,32 @@
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
-import { Outlet } from "react-router-dom";
-import { twMerge } from "tailwind-merge";
-import { useIsMobile } from "../hooks/useIsMobile";
-import MobileLayout from "./MobileLayout";
-
-const layoutStyle = "w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8";
+import { useReveal } from "../hooks/useReveal";
 
 const RootLayout = () => {
-  const isMobile = useIsMobile();
+  const { pathname, hash } = useLocation();
+  useReveal(pathname);
 
-  // Desktop multi-page layout
+  // Router navigations (e.g. /about -> /#about) don't scroll to the hash on their own.
+  useEffect(() => {
+    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
+
   return (
-    <div className="relative grid grid-rows-[auto,1fr,auto] min-h-screen bg-backgroundMain transition-colors ease-in-out duration-300 z-10">
-      <div className="flex flex-col items-center gap-2 fixed bottom-5 right-5 rounded-full z-50 p-1">
-        <div className="text-[var(--color-iconColor)] lg:hidden"></div>
-      </div>
-
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-20"></div>
-      <div className={twMerge("sticky top-0 z-40")}>
-        <Header isMobile={isMobile} />
-      </div>
-      <main
-        className={
-          isMobile
-            ? twMerge("", layoutStyle)
-            : twMerge("pt-12 sm:pt-16 md:pt-24 pb-8 sm:pb-12", layoutStyle)
-        }
+    <div id="top" className="flex min-h-svh flex-col">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-fg focus:px-4 focus:py-2 focus:text-bg"
       >
-        {isMobile ? <MobileLayout /> : <Outlet />}
+        Skip to content
+      </a>
+      <Header />
+      <main id="main" className="flex-1">
+        <Outlet />
       </main>
-      <Footer className="bg-backgroundAlt" />
+      <Footer />
     </div>
   );
 };

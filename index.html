@@ -1,14 +1,82 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="/src/assets/amlogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adewale Mudasiru — Frontend Developer (React &amp; TypeScript)</title>
+    <meta
+      name="description"
+      content="Adewale Mudasiru is a frontend developer building React, TypeScript and Tailwind CSS interfaces: admin dashboards, back-office tools, client portals and websites."
+    />
+    <link rel="canonical" href="https://adewalemudasiru.vercel.app/" />
+    <meta name="theme-color" content="#111214" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta
       name="google-site-verification"
       content="spSDrjfEqnfedZlJI78R3tH_h1ELJjDLhxPrwtnAiVA"
     />
-    <title>Adewale Mudasiru</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://adewalemudasiru.vercel.app/" />
+    <meta property="og:title" content="Adewale Mudasiru — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="React, TypeScript and Tailwind CSS interfaces: admin dashboards, back-office tools, client portals and websites."
+    />
+    <meta property="og:image" content="https://adewalemudasiru.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Adewale Mudasiru, frontend developer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Adewale Mudasiru — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="React, TypeScript and Tailwind CSS interfaces: admin dashboards, back-office tools, client portals and websites."
+    />
+    <meta name="twitter:image" content="https://adewalemudasiru.vercel.app/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adewale Mudasiru",
+        "url": "https://adewalemudasiru.vercel.app/",
+        "jobTitle": "Frontend Developer",
+        "sameAs": [
+          "https://github.com/adewalemudasiru",
+          "https://www.linkedin.com/in/adewale-mudasiru/"
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Non-blocking font CSS; fallbacks are metric-matched in index.css. -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+      />
+    </noscript>
+
+    <!-- Set the theme before first paint to avoid a light/dark flash. -->
+    <script>
+      try {
+        var t = localStorage.getItem("theme") === "light" ? "light" : "dark"; // dark by default
+        document.documentElement.dataset.theme = t;
+      } catch (e) {
+        document.documentElement.dataset.theme = "dark";
+      }
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+        document.documentElement.classList.add("motion-ok");
+    </script>
   </head>
   <body>
     <div id="root"></div>

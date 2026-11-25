@@ -1,60 +1,175 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap");
 @import "tailwindcss";
 
-:root {
-  font-family: "Geist Mono", "Inter", sans-serif;
-  background-color: var(--color-backgroundMain);
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Design tokens. Both themes share one structure; only values change. */
+:root[data-theme="light"] {
+  --bg: #f6f4ef;
+  --surface: #fffdf9;
+  --fg: #16181d;
+  --muted: #565b63; /* 6.4:1 on --bg */
+  --line: #dfdbd1;
+  --accent: #0f766e; /* teal-700, 5.2:1 on --bg */
+  --accent-fg: #ffffff;
+  color-scheme: light;
 }
 
-@theme {
-  --color-textPrimary: hsl(var(--txt));
-  --color-textSecondary: hsl(var(--dtxt));
+:root,
+:root[data-theme="dark"] {
+  --bg: #111214;
+  --surface: #18191c;
+  --fg: #ecebe7;
+  --muted: #a0a2a7; /* 7.4:1 on --bg */
+  --line: #2a2c30;
+  --accent: #2dd4bf; /* teal-400 */
+  --accent-fg: #0b2a27;
+  color-scheme: dark;
+}
 
-  --color-borderLight: hsl(var(--pbdr));
-  --color-borderStrong: hsl(var(--sbdr));
+/* Fallback tuned (measured) to Instrument Serif's width so the headline doesn't reflow when the web font swaps in. */
+@font-face {
+  font-family: "Instrument Serif Fallback";
+  src: local("Times New Roman"), local("Times");
+  size-adjust: 84.1%;
+  ascent-override: 117.7%;
+  descent-override: 36.9%;
+}
 
-  --color-accentPrimary: hsl(var(--pac));
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: color-mix(in srgb, var(--accent) 12%, var(--bg));
 
-  --color-cardBackground: hsl(var(--card));
-
-  --color-backgroundMain: hsl(var(--bgMain));
-  --color-backgroundAlt: hsl(var(--bgAlt));
-
-  --color-iconColor: hsl(var(--icon));
-  --color-darkIconColor: hsl(var(--darkicon));
-  --color-iconBackground: var(--iconBg);
-  --color-floatingButton: var(--floatBg);
-
-  --color-line: hsl(var(--pbdr));
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Instrument Serif", "Instrument Serif Fallback", Georgia, serif;
 }
 
 @layer base {
-  :root[data-theme="light"] {
-    --txt: 215, 14%, 34%;
-    --pbdr: 220, 13%, 91%;
-    --sbdr: 220, 13%, 91%;
-    --pac: 166.15, 76.47%, 96.67%;
-    --card: 0, 0%, 100%;
-    --bgMain: 0, 0%, 97.3%;
-    --bgAlt: 0, 0%, 100%;
-    --icon: 0, 0%, 0%;
-    --iconBg: 0, 0%, 100%;
-    --floatBg: black;
+  html {
+    scroll-padding-top: 5rem; /* keeps anchored headings clear of the sticky header */
+    -webkit-text-size-adjust: 100%;
   }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
 
-  :root[data-theme="dark"] {
-    --txt: 220, 8.94%, 46.08%;
-    --dtxt: 216, 33%, 68%;
-    --pbdr: 217, 49%, 20%;
-    --sbdr: 220, 14%, 96%;
-    --pac: 166.15, 76.47%, 96.67%;
-    --card: 222, 44%, 13%;
-    --bgMain: 223, 47%, 11%;
-    --bgAlt: 222, 44%, 13%;
-    --icon: 216, 33%, 68%;
-    --darkicon: 173, 80%, 40%;
-    --iconBg: transparent;
-    --floatBg: white;
+@utility container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2rem);
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.02;
+}
+
+@utility link-underline {
+  text-decoration-line: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  transition:
+    text-decoration-color 0.2s,
+    color 0.2s;
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: currentColor;
+    color: var(--accent);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@utility animate-rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(-90deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+@utility animate-fade {
+  animation: fade 0.3s ease-out both;
+}
+
+@utility animate-turn {
+  animation: turn 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Nav underline that grows from the left on hover/focus. */
+@utility link-grow {
+  background: linear-gradient(var(--accent), var(--accent)) no-repeat left bottom / 0% 2px;
+  padding-bottom: 2px;
+  transition:
+    background-size 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    color 0.2s;
+  &:hover,
+  &:focus-visible {
+    background-size: 100% 2px;
+  }
+}
+
+/* .reveal: hidden only when index.html marked motion as OK (JS on, no reduced-motion);
+   useReveal() adds .is-visible when the element scrolls into view. */
+.motion-ok .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.motion-ok .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

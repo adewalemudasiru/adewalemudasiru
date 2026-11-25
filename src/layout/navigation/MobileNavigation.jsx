@@ -1,54 +1,85 @@
-import { Button } from "../../components/ui/Button";
-import { X } from "lucide-react";
-import { myData } from "../../components/data/allData";
-import { NavLink } from "react-router-dom";
-import Socials from "../../components/ui/Socials";
-import { twMerge } from "tailwind-merge";
+import { useEffect, useRef } from "react";
+import { Menu, X } from "lucide-react";
+import { navItems, links } from "../../components/data/allData";
+import { useLockScroll } from "../../hooks/useLockScroll";
 
-const MobileNavigation = ({ isOpen, onClose }) => {
+const MobileNavigation = ({ open, setOpen }) => {
+  const buttonRef = useRef(null);
+  const firstLinkRef = useRef(null);
+  useLockScroll(open);
+
+  useEffect(() => {
+    if (!open) return;
+    firstLinkRef.current?.focus();
+    const onKey = (e) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        buttonRef.current?.focus();
+      }
+    };
+    // Close if the viewport grows past the mobile breakpoint.
+    const mq = matchMedia("(min-width: 768px)");
+    const onMq = () => mq.matches && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    mq.addEventListener("change", onMq);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      mq.removeEventListener("change", onMq);
+    };
+  }, [open, setOpen]);
+
+  const close = () => setOpen(false);
+
   return (
-    <aside
-      className={twMerge(
-        "fixed top-0 right-0 bg-backgroundMain",
-        "h-svh w-full flex flex-col z-50 p-4 sm:p-6 md:hidden",
-        "transform transition-transform duration-300 ease-in-out",
-        isOpen ? "translate-x-0" : "translate-x-full",
-        "overflow-y-auto",
+    <div className="md:hidden">
+      <button
+        ref={buttonRef}
+        type="button"
+        aria-expanded={open}
+        aria-controls="mobile-menu"
+        aria-label={open ? "Close menu" : "Open menu"}
+        onClick={() => setOpen(!open)}
+        className="-mr-2 grid size-11 place-items-center rounded-md text-fg"
+      >
+        {open ? <X size={22} /> : <Menu size={22} />}
+      </button>
+
+      {open && (
+        <nav
+          id="mobile-menu"
+          aria-label="Primary"
+          className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col overflow-y-auto border-t border-line bg-bg px-[clamp(1.25rem,4vw,2rem)] pb-8"
+        >
+          <ul className="divide-y divide-line">
+            {navItems.map((item, i) => (
+              <li
+                key={item.href}
+                className="animate-rise"
+                style={{ animationDuration: "0.45s", animationDelay: `${60 + i * 50}ms` }}
+              >
+                <a
+                  ref={i === 0 ? firstLinkRef : undefined}
+                  href={item.href}
+                  onClick={close}
+                  className="font-display flex items-baseline justify-between py-5 text-4xl"
+                >
+                  {item.label}
+                  <span className="font-mono text-xs text-accent">0{i + 1}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-auto flex gap-6 pt-10 font-mono text-sm text-muted">
+            <a href={links.github} target="_blank" rel="noopener noreferrer" className="link-underline">
+              GitHub
+            </a>
+            <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="link-underline">
+              LinkedIn
+            </a>
+          </div>
+        </nav>
       )}
-    >
-      <div className="flex justify-end">
-        <Button variant="ghost" onClick={onClose}>
-          <X size={32} />
-        </Button>
-      </div>
-
-      <ul className="mt-8 space-y-4">
-        {myData.navItems.map((item) => (
-          <li key={item.id}>
-            <NavLink
-              to={item.path}
-              className={({ isActive }) =>
-                `text-xl sm:text-2xl font-semibold block py-2 ${
-                  isActive
-                    ? "text-teal-500"
-                    : "text-textSecondary hover:text-teal-500"
-                }`
-              }
-              onClick={onClose}
-            >
-              {item.name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-auto pt-8 pb-6">
-        <h3 className="mb-4 text-textSecondary font-semibold text-sm sm:text-base">
-          Connect
-        </h3>
-        <Socials />
-      </div>
-    </aside>
+    </div>
   );
 };
 

@@ -1,68 +1,64 @@
-import { TechStack } from "../ui/TechStack";
+import { ArrowUpRight } from "lucide-react";
 
-const ProjectCard = ({ project, className = "", isMobile = false }) => {
-  const projectLink = project.info[0].link;
+const ProjectCard = ({ project, featured = false }) => {
+  const { title, summary, role, year, stack, image, url } = project;
 
   return (
-    <div
-      key={project.title}
-      className={`group rounded-2xl overflow-hidden border border-borderLight hover:border hover:border-teal-500 bg-cardBackround shadow-md hover:shadow-lg transition ease-in-out duration-300 ${className}`}
+    <article
+      className={`reveal group relative grid gap-6 ${featured ? "xl:grid-cols-12 xl:gap-10" : ""}`}
     >
-      {/* Image and overlay for each project */}
-
-      <a
-        href={projectLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative overflow-hidden cursor-pointer"
+      {/* Title text sits behind the image so a failed load still shows something meaningful. */}
+      <div
+        className={`relative aspect-[2/1] overflow-hidden rounded-lg border border-line bg-surface transition-colors group-hover:border-accent ${featured ? "xl:col-span-7" : ""}`}
       >
+        <span className="text-display absolute inset-0 grid place-items-center p-6 text-center text-3xl text-muted">
+          {title}
+        </span>
         <img
-          src={project.image}
-          alt={project.title}
+          src={image}
+          alt={`Screenshot of the ${title} interface`}
+          width="1600"
+          height="800"
           loading="lazy"
           decoding="async"
-          className="w-full h-40 sm:h-48 md:h-52 object-cover"
+          onError={(e) => (e.currentTarget.style.display = "none")}
+          className="relative size-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04] group-focus-within:scale-[1.04]"
         />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4 sm:p-6 z-20">
-          <div className="flex gap-3">
-            {/* Links for project actions */}
-            {project.info.map((item, index) => (
-              <div
-                key={index}
-                className="bg-teal-500 p-2 rounded-lg hover:bg-teal-600 transition-colors"
-              >
-                <img
-                  src={item.icon}
-                  alt={`${project.title} action`}
-                  className="w-5 h-5"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </a>
-
-      {/* Details for each project */}
-      <div className="p-4 sm:p-6">
-        <a
-          href={projectLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-teal-500 transition-colors"
-        >
-          <h4 className="text-lg sm:text-xl text-textSecondary font-bold mb-2 sm:mb-3 cursor-pointer">
-            {project.title}
-          </h4>
-        </a>
-        <p className="text-sm sm:text-base text-textPrimary mb-3 sm:mb-4 line-clamp-2">
-          {project.description}
-        </p>
-        <TechStack technologies={project.stack} />
       </div>
-    </div>
+
+      <div className={featured ? "xl:col-span-5 xl:self-end" : ""}>
+        <p className="font-mono text-xs text-muted"><span className="text-accent">
+          {year}</span> · {role}
+        </p>
+        <h3 className={`text-display mt-2 break-words ${featured ? "text-4xl sm:text-5xl" : "text-3xl"}`}>
+          {url ? (
+            // Stretched link: the whole card is clickable while keeping one tab stop.
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 transition-colors group-hover:text-accent after:absolute after:inset-0 after:content-['']"
+            >
+              {title}
+              <ArrowUpRight
+                size={22}
+                aria-hidden="true"
+                className="text-accent transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+              <span className="sr-only">(visit live site, opens in a new tab)</span>
+            </a>
+          ) : (
+            title
+          )}
+        </h3>
+        <p className="mt-3 max-w-[60ch] text-muted">{summary}</p>
+        <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-muted" aria-label="Technologies">
+          {stack.map((tech) => (
+            <li key={tech}>{tech}</li>
+          ))}
+        </ul>
+      </div>
+    </article>
   );
 };
 
