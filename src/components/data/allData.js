@@ -40,8 +40,7 @@ export const projects = [
     year: "2024",
     stack: ["React", "TypeScript", "Tailwind CSS"],
     image: shareshopship,
-    // shortcut: live URL omitted — https://shareshopship.com did not respond during the Nov 2026 link check; restore once reachable.
-    url: null,
+    url: "https://shareshopship.com",
   },
   {
     title: "Corporate Setup",
@@ -88,11 +87,24 @@ export const projects = [
 export const skills = [
   {
     group: "Frontend engineering",
-    items: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+    items: [
+      "React",
+      "Vue",
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+    ],
   },
   {
     group: "Product interfaces",
-    items: ["Admin dashboards", "Dynamic form builders", "Real-time chat UI", "API integration"],
+    items: [
+      "Admin dashboards",
+      "Dynamic form builders",
+      "Real-time chat UI",
+      "API integration",
+    ],
   },
   {
     group: "Design collaboration",
